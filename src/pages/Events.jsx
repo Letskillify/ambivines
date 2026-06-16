@@ -4,17 +4,17 @@ import { Instagram, Play } from 'lucide-react';
 const Events = () => {
   // Array of reels with clean IDs and editorial titles
   const reels = [
-    { id: "DKcWc1EzBmI", title: "Wine Tasting Highlights", thumbnail: "/img/thumbnail/t1.jpg" },
-    { id: "DClZrAstYmg", title: "Exclusive Vintage Evening", thumbnail: "/img/thumbnail/t2.jpg" },
-    { id: "DW8alvKjfln", title: "Central India Wine Culture", thumbnail: "/img/thumbnail/t3.jpg" },
-    { id: "DUDAVquDWie", title: "Ambi Vineyards Experience", thumbnail: "/img/thumbnail/t4.jpg" },
-    { id: "DTMxbLoiAqF", title: "Harvest Celebration", thumbnail: "/img/thumbnail/t5.jpg" },
-    { id: "DSJ1yh9jaKd", title: "Gourmet Pairings", thumbnail: "/img/thumbnail/t6.jpg" },
-    { id: "DQ3doe5DTHF", title: "The Grape Revolution", thumbnail: "/img/thumbnail/t7.jpg" },
-    { id: "DOVwU-9CFWS", title: "Indore Wine Showcase", thumbnail: "/img/thumbnail/t8.jpg" },
-    { id: "DI3vX-ZtfFu", title: "Bhopal Chapter Tasting", thumbnail: "/img/thumbnail/t9.jpg" },
-    { id: "DD68f-jzNnZ", title: "Weekend Vineyard Tour", thumbnail: "/img/thumbnail/t10.jpg" },
-    { id: "DDCO1yhTtLr", title: "Curated Masterclass", thumbnail: "/img/thumbnail/t11.jpg" }
+    { id: "DKcWc1EzBmI", title: "Wine Tasting Highlights", thumbnail: "https://res.cloudinary.com/duzwys877/image/upload/v1781605430/t1_phgj2j.jpg" },
+    { id: "DClZrAstYmg", title: "Exclusive Vintage Evening", thumbnail: "https://res.cloudinary.com/duzwys877/image/upload/v1781605431/t2_gz8l9o.jpg" },
+    { id: "DW8alvKjfln", title: "Central India Wine Culture", thumbnail: "https://res.cloudinary.com/duzwys877/image/upload/v1781605431/t3_lxzu4s.jpg" },
+    { id: "DUDAVquDWie", title: "Ambi Vineyards Experience", thumbnail: "https://res.cloudinary.com/duzwys877/image/upload/v1781605431/t4_vwykov.jpg" },
+    { id: "DTMxbLoiAqF", title: "Harvest Celebration", thumbnail: "https://res.cloudinary.com/duzwys877/image/upload/v1781605432/t5_u4l0sa.jpg" },
+    { id: "DSJ1yh9jaKd", title: "Gourmet Pairings", thumbnail: "https://res.cloudinary.com/duzwys877/image/upload/v1781605432/t6_wc4udc.jpg" },
+    { id: "DQ3doe5DTHF", title: "The Grape Revolution", thumbnail: "https://res.cloudinary.com/duzwys877/image/upload/v1781605432/t7_svru2u.jpg" },
+    { id: "DOVwU-9CFWS", title: "Indore Wine Showcase", thumbnail: "https://res.cloudinary.com/duzwys877/image/upload/v1781605433/t8_qq8nlf.jpg" },
+    { id: "DI3vX-ZtfFu", title: "Bhopal Chapter Tasting", thumbnail: "https://res.cloudinary.com/duzwys877/image/upload/v1781605433/t9_epjgqg.jpg" },
+    { id: "DD68f-jzNnZ", title: "Weekend Vineyard Tour", thumbnail: "https://res.cloudinary.com/duzwys877/image/upload/v1781605431/t10_lzebgg.jpg" },
+    { id: "DDCO1yhTtLr", title: "Curated Masterclass", thumbnail: "https://res.cloudinary.com/duzwys877/image/upload/v1781605430/t11_kidbip.jpg" }
   ];
 
   return (

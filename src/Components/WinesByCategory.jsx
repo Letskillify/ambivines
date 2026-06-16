@@ -76,7 +76,7 @@ const WinesByCategory = () => {
           </div>
           
           <div className="hidden md:block text-[10px] tracking-[0.3em] text-stone-400 uppercase">
-            Showing {indexOfFirstWine + 1}—{Math.min(indexOfLastWine, filteredWines.length)} of {filteredWines.length}
+            Showing {indexOfFirstWine + 1}-{Math.min(indexOfLastWine, filteredWines.length)} of {filteredWines.length}
           </div>
         </div>
 

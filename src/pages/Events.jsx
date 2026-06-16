@@ -1,8 +1,22 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { MapPin, Instagram } from 'lucide-react';
+import { Instagram, Play } from 'lucide-react';
 
 const Events = () => {
+  // Array of reels with clean IDs and editorial titles
+  const reels = [
+    { id: "DKcWc1EzBmI", title: "Wine Tasting Highlights", thumbnail: "/img/thumbnail/t1.jpg" },
+    { id: "DClZrAstYmg", title: "Exclusive Vintage Evening", thumbnail: "/img/thumbnail/t2.jpg" },
+    { id: "DW8alvKjfln", title: "Central India Wine Culture", thumbnail: "/img/thumbnail/t3.jpg" },
+    { id: "DUDAVquDWie", title: "Ambi Vineyards Experience", thumbnail: "/img/thumbnail/t4.jpg" },
+    { id: "DTMxbLoiAqF", title: "Harvest Celebration", thumbnail: "/img/thumbnail/t5.jpg" },
+    { id: "DSJ1yh9jaKd", title: "Gourmet Pairings", thumbnail: "/img/thumbnail/t6.jpg" },
+    { id: "DQ3doe5DTHF", title: "The Grape Revolution", thumbnail: "/img/thumbnail/t7.jpg" },
+    { id: "DOVwU-9CFWS", title: "Indore Wine Showcase", thumbnail: "/img/thumbnail/t8.jpg" },
+    { id: "DI3vX-ZtfFu", title: "Bhopal Chapter Tasting", thumbnail: "/img/thumbnail/t9.jpg" },
+    { id: "DD68f-jzNnZ", title: "Weekend Vineyard Tour", thumbnail: "/img/thumbnail/t10.jpg" },
+    { id: "DDCO1yhTtLr", title: "Curated Masterclass", thumbnail: "/img/thumbnail/t11.jpg" }
+  ];
+
   return (
     <main className="bg-[#FCFBFA] min-h-screen font-sans text-stone-900 overflow-x-hidden">
       
@@ -49,8 +63,8 @@ const Events = () => {
         </div>
       </section>
 
-      {/* Section Divider */}
-      <section className="py-16 px-6 text-center">
+      {/* Section Title */}
+      <section className="pt-16 pb-12 px-6 text-center">
         <div className="max-w-2xl mx-auto">
           <h3 className="text-2xl md:text-3xl font-serif italic text-stone-900 mb-6">
             For more details on our past events, explore below.
@@ -59,106 +73,53 @@ const Events = () => {
         </div>
       </section>
 
-      {/* City Cards Section */}
-      <section className="py-20 px-6 bg-[#F9F8F6]">
+      {/* Responsive Thumbnail Cards Grid Section */}
+      <section className="pb-24 px-6 bg-[#FCFBFA]">
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12">
-            
-            {/* Indore Card */}
-            <Link 
-              to="/events/indore"
-              className="group relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-2"
-            >
-              <img 
-                src="https://images.unsplash.com/photo-1558346489-19413928158b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHdpbmV8ZW58MHx8MHx8fDA%3D"
-                alt="Wine Tasting Events in Indore"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-              />
-              
-              {/* Overlay Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-              
-              {/* Content Overlay */}
-              <div className="absolute bottom-0 left-0 p-8 text-white">
-                <div className="flex items-center gap-2 mb-4">
-                  <MapPin size={20} className="text-[#811331]" />
-                  <span className="text-sm uppercase tracking-[0.2em] font-bold bg-[#811331] px-3 py-1 rounded-full">
-                    Indore
-                  </span>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {reels.map((reel, index) => (
+              <div 
+                key={index} 
+                className="group relative aspect-[3/4] rounded-2xl overflow-hidden bg-stone-100 border border-stone-200/60 shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-1.5"
+              >
+                {/* Event Thumbnail Image */}
+                <img 
+                  src={reel.thumbnail}
+                  alt={reel.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                  onError={(e) => e.target.src = `https://www.instagram.com/p/${reel.id}/media/?size=l`}
+                />
+                
+                {/* Visual Gradient Shading */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10"></div>
+                
+                {/* Floating Top Badge Accent */}
+                <div className="absolute top-4 right-4 bg-black/40 backdrop-blur-md p-2 rounded-full text-white/90">
+                  <Instagram size={18} />
                 </div>
-                <h3 className="text-3xl md:text-4xl font-serif italic mb-3">
-                  Wine Tasting Events
-                </h3>
-                <p className="text-white/90 text-sm leading-relaxed max-w-sm">
-                  From intimate tastings to lively wine evenings, discover our memorable experiences in Indore
-                </p>
-              </div>
-            </Link>
 
-            {/* Bhopal Card */}
-            <Link 
-              to="/events/bhopal"
-              className="group relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-2"
-            >
-              <img 
-                src="https://images.unsplash.com/photo-1535958636474-b021ee887b13?auto=format&fit=crop&q=80&w=800"
-                alt="Wine Tasting Events in Bhopal"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-              />
-              
-              {/* Overlay Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-              
-              {/* Content Overlay */}
-              <div className="absolute bottom-0 left-0 p-8 text-white">
-                <div className="flex items-center gap-2 mb-4">
-                  <MapPin size={20} className="text-[#811331]" />
-                  <span className="text-sm uppercase tracking-[0.2em] font-bold bg-[#811331] px-3 py-1 rounded-full">
-                    Bhopal
+                {/* Editorial Details & Action Elements */}
+                <div className="absolute inset-0 p-6 flex flex-col justify-end z-10">
+                  <span className="text-[10px] uppercase tracking-[0.2em] text-[#f3d2dd] font-bold mb-1">
+                    Ambi Gatherings
                   </span>
+                  <h4 className="text-xl font-serif italic text-white mb-5 leading-snug">
+                    {reel.title}
+                  </h4>
+                  
+                  <a 
+                    href={`https://www.instagram.com/reel/${reel.id}/`}
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 w-full py-3 bg-white text-stone-900 font-sans text-xs uppercase tracking-widest font-semibold rounded-xl hover:bg-[#811331] hover:text-white transition-all duration-300 shadow-md"
+                  >
+                    <Play size={13} fill="currentColor" />
+                    Watch Reel
+                  </a>
                 </div>
-                <h3 className="text-3xl md:text-4xl font-serif italic mb-3">
-                  Wine Tasting Events
-                </h3>
-                <p className="text-white/90 text-sm leading-relaxed max-w-sm">
-                  Set against the city's relaxed charm, experience our curated wine gatherings in Bhopal
-                </p>
               </div>
-            </Link>
-
-          </div>
-        </div>
-      </section>
-
-      {/* Closing Statement */}
-      <section className="py-20 px-6 text-center bg-white">
-        <div className="max-w-3xl mx-auto space-y-8">
-          <h3 className="text-2xl md:text-3xl font-serif italic text-stone-900">
-            We look forward to creating many more such experiences in the city.
-          </h3>
-          <div className="flex items-center justify-center gap-6">
-            <div className="h-px w-20 bg-stone-300"></div>
-            <span className="text-[10px] uppercase tracking-[0.4em] font-bold text-[#811331]">Join Our Journey</span>
-            <div className="h-px w-20 bg-stone-300"></div>
-          </div>
-          <p className="text-stone-600 font-light leading-relaxed">
-            Stay connected with us for upcoming wine tasting events, exclusive experiences, and celebrations of fine wine culture across Madhya Pradesh.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
-            <Link 
-              to="/book-tour"
-              className="px-8 py-4 bg-[#811331] text-white rounded-full hover:bg-[#6a0e28] transition-colors"
-            >
-              <span className="uppercase tracking-[0.2em] text-sm font-medium">Book a Tasting</span>
-            </Link>
-            <a 
-              href="https://instagram.com/ambivineyards" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="px-8 py-4 border border-stone-300 text-stone-700 rounded-full hover:bg-stone-100 transition-colors"
-            >
-              <span className="uppercase tracking-[0.2em] text-sm font-medium">Follow Updates</span>
-            </a>
+            ))}
           </div>
         </div>
       </section>

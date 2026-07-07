@@ -22,7 +22,8 @@ export const WINE_LIST = [
     sizes: ["375ml", "750ml"],
     origin: "Rhône Valley (France); now widely grown in Australia, South Africa, and worldwide",
     price: "Ask for Price",
-    image: "../img/bottle/r4.jpeg"
+    image: "https://res.cloudinary.com/dcjn4y284/image/upload/v1783407837/d1_bh5fex.jpg",
+    img2: "https://res.cloudinary.com/dcjn4y284/image/upload/v1783407835/d2_yvlbvk.jpg"
   },
   {
     id: 2,
@@ -42,7 +43,8 @@ export const WINE_LIST = [
     sizes: ["375ml", "750ml"],
     origin: "Spain",
     price: "Ask for Price",
-    image: "../img/bottle/r10.jpeg"
+    image: "https://res.cloudinary.com/dcjn4y284/image/upload/v1783407845/h1_ky8suu.jpg",
+    img2: "https://res.cloudinary.com/dcjn4y284/image/upload/v1783407841/h2_kvpbpq.jpg"
   },
   {
     id: 3,
@@ -61,7 +63,8 @@ export const WINE_LIST = [
     sizes: ["375ml", "750ml"],
     origin: "Bordeaux (France), Rioja (Spain), Italy; now grown worldwide",
     price: "Ask for Price",
-    image: "../img/bottle/r7.jpeg"
+    image: "https://res.cloudinary.com/dcjn4y284/image/upload/v1783407855/f1_dv5f4p.png",
+    img2: "https://res.cloudinary.com/dcjn4y284/image/upload/v1783407840/f2_uze2ak.jpg"
   },
   {
     id: 4,
@@ -75,7 +78,8 @@ export const WINE_LIST = [
     sizes: ["375ml", "750ml"],
     origin: "Bordeaux (France) – Cabernet; Rhône Valley (France) – Shiraz; now grown worldwide",
     price: "Ask for Price",
-    image: "../img/bottle/r6.jpeg"
+    image: "https://res.cloudinary.com/dcjn4y284/image/upload/v1783407862/e1_y6b05s.png",
+    img2: "https://res.cloudinary.com/dcjn4y284/image/upload/v1783407837/e2_yogmco.jpg"
   },
   {
     id: 5,
@@ -89,7 +93,8 @@ export const WINE_LIST = [
     sizes: ["375ml", "750ml"],
     origin: "Bordeaux (France) – Cabernet; Rhône Valley (France) – Shiraz; now grown worldwide",
     price: "Ask for Price",
-    image: "../img/bottle/r8.jpeg"
+    image: "https://res.cloudinary.com/dcjn4y284/image/upload/v1783407840/g1_j1pwwa.jpg",
+    img2: "https://res.cloudinary.com/dcjn4y284/image/upload/v1783407840/g2_n2cnq9.jpg"
   },
   {
     id: 6,
@@ -103,94 +108,9 @@ export const WINE_LIST = [
     sizes: ["750ml"],
     origin: "Blend of Cabernet Sauvignon, Shiraz & Merlot",
     price: "Ask for Price",
-    image: "../img/bottle/r5.jpeg"
+    image: "https://res.cloudinary.com/dcjn4y284/image/upload/v1783407841/c1_booo6y.jpg",
+    img2: "https://res.cloudinary.com/dcjn4y284/image/upload/v1783407838/c2_oejyh9.jpg"
   },
-  {
-    id: 12,
-    name: "Malwi Port Wine",
-    category: "red",
-    shortDescription: "Semi-sweet red wine with a pomegranate flavor.",
-    features: [
-      "Semi-sweet red wine with a pomegranate (अनार) flavor",
-      "Medium-bodied with a smooth and fruity finish"
-    ],
-    abv: "14.8%",
-    sizes: ["375ml", "750ml"],
-    price: "Ask for Price",
-    // image: "../img/bottle/r5.jpeg"
-  },
-  {
-    id: 14,
-    name: "Nratya Red",
-    category: "red",
-    shortDescription: "Sweet wine with fruity cranberry flavour.",
-    features: [
-      "Sweet wine with fruity cranberry flavour",
-      "Rich and aromatic"
-    ],
-    abv: "13.0%",
-    sizes: ["375ml", "750ml"],
-    price: "Ask for Price",
-    image: "../img/bottle/r1.png"
-  },
-  {
-    id: 16,
-    name: "Apsara Classic",
-    category: "red",
-    shortDescription: "Reflects flavors of chocolate & toast.",
-    features: [
-      "Reflects flavors of chocolate & toast",
-      "Rich dessert wine character"
-    ],
-    abv: "14.6%",
-    sizes: ["375ml", "750ml"],
-    price: "Ask for Price",
-    image: "../img/bottle/r2.jpeg"
-  },
-  {
-    id: 17,
-    name: "Apsara Silver",
-    category: "red",
-    shortDescription: "Sweet in taste, light-bodied red blend.",
-    features: [
-      "Sweet in taste, light-bodied red blend",
-      "Smooth finish"
-    ],
-    abv: "14.8%",
-    sizes: ["375ml", "750ml"],
-    price: "Ask for Price",
-    // image: "../img/bottle/r3.jpeg"
-  },
-  {
-    id: 18,
-    name: "Apsara Gold",
-    category: "red",
-    shortDescription: "Reflects aftertaste of black cherry flavour.",
-    features: [
-      "Reflects aftertaste of black cherry flavour",
-      "Premium fortified blend"
-    ],
-    abv: "14.4%",
-    sizes: ["375ml", "750ml"],
-    price: "Ask for Price",
-    image: "../img/bottle/r3.jpeg"
-  },
-  {
-    id: 19,
-    name: "Apsara Premium",
-    category: "red",
-    shortDescription: "Sweet in taste with a mix of fruit flavours.",
-    features: [
-      "Sweet in taste with a mix of fruit flavours",
-      "Complex and rich"
-    ],
-    abv: "14.8%",
-    sizes: ["375ml", "750ml"],
-    price: "Ask for Price",
-    image: "../img/bottle/r9.jpeg"
-  },
-
-  // --- WHITE WINES ---
   {
     id: 7,
     name: "Premium Chenin Blanc",
@@ -210,38 +130,9 @@ export const WINE_LIST = [
     sizes: ["375ml", "750ml"],
     origin: "Loire Valley (France); also found across South Africa, Australia, Argentina, United States, and New Zealand",
     price: "Ask for Price",
-    image: "../img/bottle/w3.jpeg"
+    image: "https://res.cloudinary.com/dcjn4y284/image/upload/v1783407849/a1_ul0wea.png",
+    img2: "https://res.cloudinary.com/dcjn4y284/image/upload/v1783407834/a2_cbbjcu.jpg"
   },
-  {
-    id: 13,
-    name: "Malwi White Wine",
-    category: "white",
-    shortDescription: "Smooth, refreshing, and easy to sip with guava and tropical fruit notes.",
-    features: [
-      "Tasting notes of guava and tropical fruits",
-      "Smooth, refreshing, and easy to sip"
-    ],
-    abv: "14.8%",
-    sizes: ["375ml", "750ml"],
-    price: "Ask for Price",
-    image: "../img/bottle/w2.jpeg"
-  },
-  {
-    id: 15,
-    name: "Nratya White",
-    category: "white",
-    shortDescription: "Sweet wine with fruity honey and straw flavour.",
-    features: [
-      "Sweet wine with fruity honey and straw flavour",
-      "Light and sweet"
-    ],
-    abv: "12.6%",
-    sizes: ["375ml", "750ml"],
-    price: "Ask for Price",
-    image: "../img/bottle/w4.png"
-  },
-
-  // --- ROSÉ WINES ---
   {
     id: 8,
     name: "Love Drink",
@@ -262,10 +153,9 @@ export const WINE_LIST = [
     sizes: ["375ml", "750ml"],
     origin: "South of France",
     price: "Ask for Price",
-    image: "../img/bottle/ro2.jpeg"
+    image: "https://res.cloudinary.com/dcjn4y284/image/upload/v1783407849/b1_bms0h3.png",
+    img2: "https://res.cloudinary.com/dcjn4y284/image/upload/v1783407835/b2_hckcj7.jpg"
   },
-
-  // --- BEER (SPRITZERS) ---
   {
     id: 9,
     name: "45° Spritzer – Green Apple",
@@ -279,7 +169,8 @@ export const WINE_LIST = [
     abv: "9.0%",
     sizes: ["330ml"],
     price: "Ask for Price",
-    image: "../img/bottle/s1.jpeg"
+    image: "https://res.cloudinary.com/dcjn4y284/image/upload/v1783407869/k1_wxrpto.png",
+    img2: "https://res.cloudinary.com/dcjn4y284/image/upload/v1783407835/k2_by4tyj.jpg"
   },
   {
     id: 10,
@@ -294,7 +185,8 @@ export const WINE_LIST = [
     abv: "14.2%",
     sizes: ["330ml"],
     price: "Ask for Price",
-    image: "../img/bottle/s2.jpeg"
+    image: "https://res.cloudinary.com/dcjn4y284/image/upload/v1783407843/i1_n1qt2i.jpg",
+    img2: "https://res.cloudinary.com/dcjn4y284/image/upload/v1783407835/i2_u51jnu.jpg"
   },
   {
     id: 11,
@@ -309,7 +201,127 @@ export const WINE_LIST = [
     abv: "10.0%",
     sizes: ["330ml"],
     price: "Ask for Price",
-    image: "../img/bottle/s3.jpeg"
+    image: "https://res.cloudinary.com/dcjn4y284/image/upload/v1783407873/j1_skf6k1.png",
+    img2: "https://res.cloudinary.com/dcjn4y284/image/upload/v1783407835/j2_v8it08.jpg"
+  },
+  {
+    id: 12,
+    name: "Malwi Port Wine",
+    category: "red",
+    shortDescription: "Semi-sweet red wine with a pomegranate flavor.",
+    features: [
+      "Semi-sweet red wine with a pomegranate (अनार) flavor",
+      "Medium-bodied with a smooth and fruity finish"
+    ],
+    abv: "14.8%",
+    sizes: ["375ml", "750ml"],
+    price: "Ask for Price",
+    image: "https://res.cloudinary.com/dcjn4y284/image/upload/v1783407853/s1_t5ts7n.png",
+    img2: "https://res.cloudinary.com/dcjn4y284/image/upload/v1783407844/s2_xd1bhh.jpg"
+  },
+  {
+    id: 13,
+    name: "Malwi White Wine",
+    category: "white",
+    shortDescription: "Smooth, refreshing, and easy to sip with guava and tropical fruit notes.",
+    features: [
+      "Tasting notes of guava and tropical fruits",
+      "Smooth, refreshing, and easy to sip"
+    ],
+    abv: "14.8%",
+    sizes: ["375ml", "750ml"],
+    price: "Ask for Price",
+    image: "https://res.cloudinary.com/dcjn4y284/image/upload/v1783407856/r1_xzxzs1.png",
+    img2: "https://res.cloudinary.com/dcjn4y284/image/upload/v1783407842/r2_thpjsh.jpg"
+  },
+  {
+    id: 14,
+    name: "Nratya Red",
+    category: "red",
+    shortDescription: "Sweet wine with fruity cranberry flavour.",
+    features: [
+      "Sweet wine with fruity cranberry flavour",
+      "Rich and aromatic"
+    ],
+    abv: "13.0%",
+    sizes: ["375ml", "750ml"],
+    price: "Ask for Price",
+    image: "https://res.cloudinary.com/dcjn4y284/image/upload/v1783407865/q1_l5hvgn.png",
+    img2: "https://res.cloudinary.com/dcjn4y284/image/upload/v1783407843/q2_wnwi9s.jpg"
+  },
+  {
+    id: 15,
+    name: "Nratya White",
+    category: "white",
+    shortDescription: "Sweet wine with fruity honey and straw flavour.",
+    features: [
+      "Sweet wine with fruity honey and straw flavour",
+      "Light and sweet"
+    ],
+    abv: "12.6%",
+    sizes: ["375ml", "750ml"],
+    price: "Ask for Price",
+    image: "https://res.cloudinary.com/dcjn4y284/image/upload/v1783407868/p1_nrmad4.png",
+    img2: "https://res.cloudinary.com/dcjn4y284/image/upload/v1783407841/p2_auz70d.jpg"
+  },
+  {
+    id: 16,
+    name: "Apsara Classic",
+    category: "red",
+    shortDescription: "Reflects flavors of chocolate & toast.",
+    features: [
+      "Reflects flavors of chocolate & toast",
+      "Rich dessert wine character"
+    ],
+    abv: "14.6%",
+    sizes: ["375ml", "750ml"],
+    price: "Ask for Price",
+    image: "https://res.cloudinary.com/dcjn4y284/image/upload/v1783407855/m1_onrqls.png",
+    img2: "https://res.cloudinary.com/dcjn4y284/image/upload/v1783407840/m2_pnjo8o.jpg"
+  },
+  // {
+  //   id: 17,
+  //   name: "Apsara Silver",
+  //   category: "red",
+  //   shortDescription: "Sweet in taste, light-bodied red blend.",
+  //   features: [
+  //     "Sweet in taste, light-bodied red blend",
+  //     "Smooth finish"
+  //   ],
+  //   abv: "14.8%",
+  //   sizes: ["375ml", "750ml"],
+  //   price: "Ask for Price",
+  //   img2: ""
+  // },
+  {
+    id: 18,
+    name: "Apsara Gold",
+    category: "red",
+    shortDescription: "Reflects aftertaste of black cherry flavour.",
+    features: [
+      "Reflects aftertaste of black cherry flavour",
+      "Premium fortified blend"
+    ],
+    abv: "14.4%",
+    sizes: ["375ml", "750ml"],
+    price: "Ask for Price",
+    image: "https://res.cloudinary.com/dcjn4y284/image/upload/v1783407864/n1_wsmdck.png",
+    img2: "https://res.cloudinary.com/dcjn4y284/image/upload/v1783407839/n2_tpelnr.jpg"
+  },
+  {
+    id: 19,
+    name: "Apsara Premium",
+    category: "red",
+    shortDescription: "Sweet in taste with a mix of fruit flavours.",
+    features: [
+      "Sweet in taste with a mix of fruit flavours",
+      "Complex and rich"
+    ],
+    abv: "14.8%",
+    sizes: ["375ml", "750ml"],
+    price: "Ask for Price",
+    image: "https://res.cloudinary.com/dcjn4y284/image/upload/v1783407868/l1_ozspdz.png",
+    img2: "https://res.cloudinary.com/dcjn4y284/image/upload/v1783407838/l2_kw0otq.jpg"
   }
 ];
 

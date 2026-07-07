@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { WINE_LIST, CATEGORY_INFO } from '../data/wines';
 
 const WineDetail = () => {
@@ -9,6 +9,15 @@ const WineDetail = () => {
 
   const wineId = Number(id);
   const wine = WINE_LIST.find((item) => item.id === wineId);
+
+  // Handle active image state for the premium gallery viewer
+  const [activeImage, setActiveImage] = useState('');
+
+  useEffect(() => {
+    if (wine) {
+      setActiveImage(wine.image);
+    }
+  }, [wine]);
 
   if (!wine) {
     return (
@@ -31,10 +40,13 @@ const WineDetail = () => {
 
   const categoryKey = wine.category;
   const categoryInfo = CATEGORY_INFO[categoryKey];
+  
+  // Gather all available images dynamically for the preview layout
+  const images = [wine.image, wine.img2].filter(Boolean);
 
   return (
-    <main className="bg-[#FCFBFA] min-h-screen text-stone-900 font-sans">
-      {/* Hero / Banner */}
+    <main className="bg-[#FCFBFA] min-h-screen text-stone-900 font-sans antialiased">
+      {/* Hero / Banner - Restored to Original */}
       <section className="relative h-[60vh] md:h-[70vh] w-full overflow-hidden bg-stone-900">
         <div className="absolute inset-0">
           <img
@@ -74,88 +86,118 @@ const WineDetail = () => {
       </section>
 
       {/* Main Content */}
-      <section className="py-24 md:py-32 px-6 md:px-12">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-          {/* Bottle / Visual */}
-          <div className="lg:col-span-5">
-            <div className="relative aspect-[3/4] rounded-[2.5rem] overflow-hidden bg-stone-100 shadow-[0_40px_80px_-40px_rgba(0,0,0,0.6)]">
+      <section className="py-20 md:py-28 px-6 md:px-12 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+          
+          {/* Left Column: Interactive Visual Showcase */}
+          <div className="lg:col-span-5 space-y-6">
+            <div className="relative aspect-[3/4] rounded-[1.5rem] overflow-hidden bg-stone-100 shadow-[0_30px_70px_-30px_rgba(28,25,23,0.3)] border border-stone-200/60">
               <img
-                src={wine.image}
+                src={activeImage || wine.image}
                 alt={wine.name}
-                className="w-full h-full object-cover transition-transform duration-[2500ms] ease-out hover:scale-105 grayscale-[0.2] hover:grayscale-0"
+                className="w-full h-full object-cover transition-all duration-700 ease-out"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
             </div>
+
+            {/* Thumbnail Preview Selector */}
+            {images.length > 1 && (
+              <div className="flex gap-4 justify-start items-center pt-2">
+                {images.map((img, index) => {
+                  const isActive = activeImage === img;
+                  return (
+                    <button
+                      key={index}
+                      type="button"
+                      onClick={() => setActiveImage(img)}
+                      className={`relative aspect-[3/4] w-20 rounded-xl overflow-hidden bg-stone-100 transition-all duration-300 ${
+                        isActive 
+                          ? 'ring-2 ring-[#811331] ring-offset-2 scale-95 opacity-100' 
+                          : 'opacity-60 hover:opacity-90 hover:scale-98'
+                      }`}
+                    >
+                      <img
+                        src={img}
+                        alt={`${wine.name} preview ${index + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                    </button>
+                  );
+                })}
+              </div>
+            )}
           </div>
 
-          {/* Details */}
-          <div className="lg:col-span-6 lg:col-start-7 space-y-10">
-            {/* Top meta */}
-            <div className="flex items-baseline justify-between border-b border-stone-200 pb-4">
-              <div className="space-y-2">
-                <span
-                  className="text-[10px] uppercase tracking-[0.4em] font-bold"
-                  style={{ color: '#811331' }}
-                >
-                  {wine.category === 'rose'
-                    ? 'Rosé'
-                    : wine.category.toUpperCase()}
-                </span>
-                <h2 className="text-3xl md:text-4xl font-serif text-stone-900">
+          {/* Right Column: Refined Structural Details */}
+          <div className="lg:col-span-7 space-y-12 lg:pt-4">
+            
+            {/* Header & Meta */}
+            <div className="space-y-4 border-b border-stone-200/80 pb-8">
+              <span
+                className="text-[11px] uppercase tracking-[0.45em] font-semibold block"
+                style={{ color: '#811331' }}
+              >
+                {wine.category === 'rose' ? 'Rosé' : wine.category.toUpperCase()}
+              </span>
+              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-4">
+                <h2 className="text-3xl md:text-4xl font-serif text-stone-900 tracking-wide">
                   {wine.name}
                 </h2>
+                {wine.price && (
+                  <p className="text-xl md:text-2xl font-serif italic text-stone-800">
+                    {wine.price}
+                  </p>
+                )}
               </div>
-              {/* <div className="text-right">
-                <p className="text-xs uppercase tracking-[0.3em] text-stone-400">
-                  Estate Price
-                </p>
-                <p className="text-2xl md:text-3xl font-serif italic text-stone-900">
-                  {wine.price}
-                </p>
-              </div> */}
             </div>
 
-            {/* Tasting notes / narrative */}
+            {/* Tasting Notes Narrative */}
             <div className="space-y-6">
-              <p className="text-sm md:text-base text-stone-500 leading-relaxed">
-                Crafted in limited quantities, this cuvée captures the quiet
-                power of our Titari plateau vineyards. Hand-harvested at dawn,
-                gently pressed, and aged with restraint, it reveals layers of
-                fruit, spice, and minerality that unfold slowly in the glass.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs uppercase tracking-[0.25em] text-stone-500">
-                <div className="space-y-1">
-                  <p className="font-bold text-stone-700">Profile</p>
-                  <p className="font-light">
-                    Structured • Balanced • Long Finish
-                  </p>
-                </div>
-                <div className="space-y-1">
-                  <p className="font-bold text-stone-700">Best Served</p>
-                  <p className="font-light">
-                    14–16°C • Large Bordeaux Stem
-                  </p>
-                </div>
-                <div className="space-y-1">
-                  <p className="font-bold text-stone-700">Pairing</p>
-                  <p className="font-light">
-                    Slow-roasted meats • Aged cheeses
-                  </p>
-                </div>
+              <div className="space-y-2">
+                <h3 className="text-xs uppercase tracking-[0.2em] text-stone-400 font-medium">The Narrative</h3>
+                <p className="text-stone-600 leading-relaxed font-light text-base md:text-[17px]">
+                  Crafted in limited quantities, this cuvée captures the quiet
+                  power of our Titari plateau vineyards. Hand-harvested at dawn,
+                  gently pressed, and aged with restraint, it reveals layers of
+                  fruit, spice, and minerality that unfold slowly in the glass.
+                </p>
               </div>
             </div>
 
-            {/* Actions */}
-            <div className="pt-6 flex flex-col sm:flex-row gap-4 sm:items-center">
+            {/* Technical Specifications Grid */}
+            <div className="border-t border-b border-stone-200/80 py-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="space-y-2 border-l border-stone-200 pl-4 md:first:border-l-0 md:first:pl-0">
+                <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-stone-400">Profile</p>
+                <p className="text-sm font-light text-stone-800 leading-snug">
+                  Structured • Balanced • Long Finish
+                </p>
+              </div>
+              <div className="space-y-2 border-l border-stone-200 pl-4">
+                <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-stone-400">Best Served</p>
+                <p className="text-sm font-light text-stone-800 leading-snug">
+                  14–16°C • Large Bordeaux Stem
+                </p>
+              </div>
+              <div className="space-y-2 border-l border-stone-200 pl-4">
+                <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-stone-400">Pairing</p>
+                <p className="text-sm font-light text-stone-800 leading-snug">
+                  Slow-roasted meats • Aged cheeses
+                </p>
+              </div>
+            </div>
 
+            {/* Premium CTA Actions */}
+            <div className="pt-4 flex flex-col sm:flex-row items-start sm:items-center gap-8">
               <button
                 type="button"
                 onClick={() => navigate('/book-tour')}
-                className="text-[11px] uppercase tracking-[0.3em] text-stone-600 hover:text-stone-900 font-sans"
+                className="group inline-flex items-center gap-4 bg-stone-900 text-white text-[11px] uppercase tracking-[0.25em] px-8 py-4 rounded-full hover:bg-[#811331] transition-all duration-300 shadow-md shadow-stone-900/10 hover:shadow-xl hover:shadow-[#811331]/10"
               >
-                Book a cellar tasting
+                <span>Book a cellar tasting</span>
+                <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
               </button>
             </div>
+
           </div>
         </div>
       </section>
@@ -164,5 +206,3 @@ const WineDetail = () => {
 };
 
 export default WineDetail;
-
-

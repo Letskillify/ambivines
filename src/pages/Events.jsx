@@ -4,17 +4,17 @@ import { Instagram, Play } from 'lucide-react';
 const Events = () => {
   // Array of reels with clean IDs and editorial titles
   const reels = [
-    { id: "DKcWc1EzBmI", title: "Wine Tasting Highlights", thumbnail: "https://res.cloudinary.com/duzwys877/image/upload/v1781605430/t1_phgj2j.jpg" },
-    { id: "DClZrAstYmg", title: "Exclusive Vintage Evening", thumbnail: "https://res.cloudinary.com/duzwys877/image/upload/v1781605431/t2_gz8l9o.jpg" },
-    { id: "DW8alvKjfln", title: "Central India Wine Culture", thumbnail: "https://res.cloudinary.com/duzwys877/image/upload/v1781605431/t3_lxzu4s.jpg" },
-    { id: "DUDAVquDWie", title: "Ambi Vineyards Experience", thumbnail: "https://res.cloudinary.com/duzwys877/image/upload/v1781605431/t4_vwykov.jpg" },
-    { id: "DTMxbLoiAqF", title: "Harvest Celebration", thumbnail: "https://res.cloudinary.com/duzwys877/image/upload/v1781605432/t5_u4l0sa.jpg" },
-    { id: "DSJ1yh9jaKd", title: "Gourmet Pairings", thumbnail: "https://res.cloudinary.com/duzwys877/image/upload/v1781605432/t6_wc4udc.jpg" },
-    { id: "DQ3doe5DTHF", title: "The Grape Revolution", thumbnail: "https://res.cloudinary.com/duzwys877/image/upload/v1781605432/t7_svru2u.jpg" },
-    { id: "DOVwU-9CFWS", title: "Indore Wine Showcase", thumbnail: "https://res.cloudinary.com/duzwys877/image/upload/v1781605433/t8_qq8nlf.jpg" },
-    { id: "DI3vX-ZtfFu", title: "Bhopal Chapter Tasting", thumbnail: "https://res.cloudinary.com/duzwys877/image/upload/v1781605433/t9_epjgqg.jpg" },
-    { id: "DD68f-jzNnZ", title: "Weekend Vineyard Tour", thumbnail: "https://res.cloudinary.com/duzwys877/image/upload/v1781605431/t10_lzebgg.jpg" },
-    { id: "DDCO1yhTtLr", title: "Curated Masterclass", thumbnail: "https://res.cloudinary.com/duzwys877/image/upload/v1781605430/t11_kidbip.jpg" }
+    { id: "DKcWc1EzBmI", title: "NATIONAL WINE DAY", subtitle: "Relive The Celebration", thumbnail: "https://res.cloudinary.com/duzwys877/image/upload/v1781605430/t1_phgj2j.jpg" },
+    { id: "DClZrAstYmg", title: "SIP & PAINT", subtitle: "Brushes, Wine & Memories", thumbnail: "https://res.cloudinary.com/duzwys877/image/upload/v1781605431/t2_gz8l9o.jpg" },
+    { id: "DW8alvKjfln", title: "WINE SOIRÉE", subtitle: "A Curated Experience", thumbnail: "https://res.cloudinary.com/duzwys877/image/upload/v1781605431/t3_lxzu4s.jpg" },
+    { id: "DUDAVquDWie", title: "BHOPAL LITERATURE FEST", subtitle: "A Toast To Stories", thumbnail: "https://res.cloudinary.com/duzwys877/image/upload/v1781605431/t4_vwykov.jpg" },
+    { id: "DTMxbLoiAqF", title: "SUNDOWNER SIPS", subtitle: "An Evening of Art & Wine", thumbnail: "https://res.cloudinary.com/duzwys877/image/upload/v1781605432/t5_u4l0sa.jpg" },
+    { id: "DSJ1yh9jaKd", title: "CANVAS & CORKS", subtitle: "An Artistic Wine Experience", thumbnail: "https://res.cloudinary.com/duzwys877/image/upload/v1781605432/t6_wc4udc.jpg" },
+    { id: "DQ3doe5DTHF", title: "MP TRAVEL MART", subtitle: "Where Wine Met Wanderers", thumbnail: "https://res.cloudinary.com/duzwys877/image/upload/v1781605432/t7_svru2u.jpg" },
+    { id: "DOVwU-9CFWS", title: "FRIENDSHIP DAY", subtitle: "Painted With Togetherness", thumbnail: "https://res.cloudinary.com/duzwys877/image/upload/v1781605433/t8_qq8nlf.jpg" },
+    { id: "DI3vX-ZtfFu", title: "SAGRA 2.0", subtitle: "Food & Wine Festival", thumbnail: "https://res.cloudinary.com/duzwys877/image/upload/v1781605433/t9_epjgqg.jpg" },
+    { id: "DD68f-jzNnZ", title: "CENTRAL INDIA PAGEANT", subtitle: "Grace, Glamour & Glasses", thumbnail: "https://res.cloudinary.com/duzwys877/image/upload/v1781605431/t10_lzebgg.jpg" },
+    { id: "DDCO1yhTtLr", title: "PAINTED POURS", subtitle: "A Wine Glass Painting Experience.", thumbnail: "https://res.cloudinary.com/duzwys877/image/upload/v1781605430/t11_kidbip.jpg" }
   ];
 
   return (
@@ -101,12 +101,13 @@ const Events = () => {
 
                 {/* Editorial Details & Action Elements */}
                 <div className="absolute inset-0 p-6 flex flex-col justify-end z-10">
-                  <span className="text-[10px] uppercase tracking-[0.2em] text-[#f3d2dd] font-bold mb-1">
-                    Ambi Gatherings
-                  </span>
-                  <h4 className="text-xl font-serif italic text-white mb-5 leading-snug">
+                  
+                  <h4 className="text-xl font-serif italic text-white mb-1 leading-snug">
                     {reel.title}
                   </h4>
+                  <p className="text-[14px]  tracking-[0.2em] text-[#f3d2dd] mb-5">
+                    {reel.subtitle}
+                  </p>
                   
                   <a 
                     href={`https://www.instagram.com/reel/${reel.id}/`}

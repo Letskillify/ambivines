@@ -23,6 +23,7 @@ const Footer = () => {
     {
       title: 'Collection',
       links: [
+        { name: 'Explore All', href: '/wines' },
         { name: 'Red Wine', href: '/wines/red' },
         { name: 'White Wine', href: '/wines/white' },
         { name: 'Rosé Wine', href: '/wines/rose' },
@@ -33,9 +34,9 @@ const Footer = () => {
       title: 'The Estate',
       links: [
         { name: 'Book a Tour', href: '/book-tour' },
-        { name: 'Private Tastings', href: '/tastings' },
-        { name: 'The Club', href: '/club' },
-        { name: 'Contact', href: '/contact' },
+        { name: 'Stores', href: '/stores' },
+        { name: 'Events', href: '/events' },
+        { name: 'Open Store', href: '/partner' },
       ],
     },
   ];

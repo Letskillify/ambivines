@@ -4,7 +4,7 @@ import Hero from '../Components/Hero';
 import CinematicStory from '../Components/Story';
 import StorySection from '../Components/About';
 import OurWines from '../Components/Wines';
-import Gallery from '../Components/Gallery';
+// import Gallery from '../Components/Gallery';
 
 const Home = () => {
   const [isVerified, setIsVerified] = useState(false);
@@ -106,7 +106,7 @@ const Home = () => {
         <StorySection />
         <CinematicStory />
         <OurWines />
-        <Gallery />
+        {/* <Gallery /> */}
       </div>
     </>
   );

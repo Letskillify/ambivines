@@ -30,7 +30,7 @@ const StorySection = () => {
             <Reveal direction="up" delay={0.2} className="absolute -bottom-10 -right-6 md:-bottom-16 md:-right-20 w-5/12 md:w-1/2 aspect-square z-20">
               <div className="w-full h-full p-1.5 md:p-2 bg-white shadow-2xl rounded-sm">
                 <img
-                  src="https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?auto=format&fit=crop&q=80&w=1000"
+                  src="https://res.cloudinary.com/dcjn4y284/image/upload/v1783407840/g1_j1pwwa.jpg"
                   alt="Hands holding grapes"
                   loading="lazy"
                   className="w-full h-full object-cover"

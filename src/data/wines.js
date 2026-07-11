@@ -205,6 +205,22 @@ export const WINE_LIST = [
     img2: "https://res.cloudinary.com/dcjn4y284/image/upload/v1783407835/j2_v8it08.jpg"
   },
   {
+    id: 20,
+    name: "Tira Bold Beer",
+    category: "beer",
+    shortDescription: "A crisp golden fusion drink with citrus, pear, and refreshing fruity notes, delivering a smooth and lively finish.",
+    features: [
+      "Crisp golden pour with citrus, pear, and a subtle hop-like lift",
+      "Unique blend of Chenin Blanc and local Titari grapes",
+      "Lively, juicy palate with a smooth, refreshing finish"
+    ],
+    abv: "13.0%",
+    sizes: ["330ml"],
+    price: "Ask for Price",
+    image: "https://res.cloudinary.com/duzwys877/image/upload/v1783776721/IMG_5943_cj40dy.png",
+    img2: "https://res.cloudinary.com/duzwys877/image/upload/v1783776716/IMG_5942_mbydwe.jpg"
+  },
+  {
     id: 12,
     name: "Malwi Port Wine",
     category: "red",
@@ -327,6 +343,12 @@ export const WINE_LIST = [
 
 // Category metadata for hero sections
 export const CATEGORY_INFO = {
+  all: {
+    title: "All Wines",
+    subtitle: "Curated Collection",
+    description: "Discover our complete collection of wines, from bold reds and crisp whites to refreshing rosé and sparkling pours.",
+    heroImage: "https://images.unsplash.com/photo-1510812431409-41d2bd2722f3?w=600&auto=format&fit=crop&q=60"
+  },
   red: {
     title: "Red Wines",
     subtitle: "Robust & Earthy Selection",

@@ -15,11 +15,12 @@ const WinesByCategory = () => {
   const cardsPerPage = 13;
 
   const normalizedCategory = category?.toLowerCase() === 'rosé' ? 'rose' : category?.toLowerCase();
-  const categoryInfo = CATEGORY_INFO[normalizedCategory];
+  const isAllView = !category || normalizedCategory === 'all';
+  const categoryInfo = isAllView ? CATEGORY_INFO.all : CATEGORY_INFO[normalizedCategory];
   
-  const filteredWines = WINE_LIST.filter(
-    wine => wine.category === normalizedCategory
-  );
+  const filteredWines = isAllView
+    ? WINE_LIST
+    : WINE_LIST.filter(wine => wine.category === normalizedCategory);
 
   // Pagination Logic
   const indexOfLastWine = currentPage * cardsPerPage;
@@ -31,9 +32,9 @@ const WinesByCategory = () => {
     const t = setTimeout(() => setIsLoaded(true), 100);
     window.scrollTo({ top: 0, behavior: 'smooth' });
     return () => clearTimeout(t);
-  }, [currentPage]);
+  }, [category, currentPage]);
 
-  if (!categoryInfo || filteredWines.length === 0) {
+  if (!categoryInfo || (!isAllView && filteredWines.length === 0)) {
     return <div className="min-h-screen bg-[#FDFBF9] flex items-center justify-center">Category Not Found</div>;
   }
 

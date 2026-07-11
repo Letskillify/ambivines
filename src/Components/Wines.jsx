@@ -16,28 +16,28 @@ const CATEGORIES = [
     name: "Red",
     description: "Robust & Earthy",
     details: "Hand-picked Sangiovese and Cabernet.",
-    image: "https://res.cloudinary.com/dcgcuvk02/image/upload/v1769948050/wrcudpyqlli6z5wfwgfq.jpg"
+    image: "https://res.cloudinary.com/dcjn4y284/image/upload/v1783407841/c1_booo6y.jpg"
   },
   {
     id: 2,
     name: "White",
     description: "Crisp & Mineral",
     details: "Sun-drenched Chardonnay and Grigio.",
-    image: "https://res.cloudinary.com/dcgcuvk02/image/upload/v1769948048/gpnqwjuexjturh5xl2wt.jpg"
+    image: "https://res.cloudinary.com/dcjn4y284/image/upload/v1783407849/a1_ul0wea.png"
   },
   {
     id: 3,
     name: "Rosé",
     description: "Fresh & Floral",
     details: "Elegant Provencal-style summer blends.",
-    image: "https://res.cloudinary.com/dcgcuvk02/image/upload/v1769948049/wwupp685hmmqu5gzftdh.jpg"
+    image: "https://res.cloudinary.com/dcjn4y284/image/upload/v1783407849/b1_bms0h3.png"
   },
   {
     id: 4,
-    name: "Sparkling",
+    name: "Beer",
     description: "Artisan & Cold",
     details: "Small-batch craft ales from our valley.",
-    image: "https://res.cloudinary.com/dcgcuvk02/image/upload/v1770556159/bold_img_ugzwqk.jpg"
+    image: "https://res.cloudinary.com/dcjn4y284/image/upload/v1783407843/i1_n1qt2i.jpg"
   }
 ];
 
@@ -150,7 +150,7 @@ const OurWines = () => {
         <div className="mt-16 md:mt-24 flex justify-end">
           <button
             type="button"
-            onClick={() => navigate('/stores')}
+            onClick={() => navigate('/wines')}
             className="group relative inline-flex items-center justify-center px-10 md:px-12 py-4 border border-[#811331] text-[#811331] overflow-hidden transition-all duration-300 ease-out hover:text-white"
           >
             <span className="relative z-10 uppercase text-[11px] tracking-[0.4em] font-bold font-sans">

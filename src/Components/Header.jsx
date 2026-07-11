@@ -40,6 +40,7 @@ const Header = () => {
       {
         name: 'Our Wines',
         subLinks: [
+          { name: 'Explore All', href: '/wines' },
           { name: 'Red Wine', href: '/wines/red' },
           { name: 'White Wine', href: '/wines/white' },
           { name: 'Rosé Wine', href: '/wines/rose' },

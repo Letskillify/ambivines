@@ -43,6 +43,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/wines" element={<WinesByCategory />} />
         <Route path="/wines/:category" element={<WinesByCategory />} />
         <Route path="/wine/:id" element={<WineDetail />} />
         <Route path="/stores" element={<OutletPage />} />

@@ -47,7 +47,7 @@ function App() {
         <Route path="/wines/:category" element={<WinesByCategory />} />
         <Route path="/wine/:id" element={<WineDetail />} />
         <Route path="/stores" element={<OutletPage />} />
-        <Route path="/book-tour" element={<TourPage />} />
+        {/* <Route path="/book-tour" element={<TourPage />} /> */}
         <Route path="/partner" element={<FranchisePage />} />
         <Route path="/our-story" element={<OurStory />} />
         <Route path="/our-farmers" element={<OurFarmers />} />

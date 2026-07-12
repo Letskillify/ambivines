@@ -33,7 +33,7 @@ const Footer = () => {
     {
       title: 'The Estate',
       links: [
-        { name: 'Book a Tour', href: '/book-tour' },
+        // { name: 'Book a Tour', href: '/book-tour' },
         { name: 'Stores', href: '/stores' },
         { name: 'Events', href: '/events' },
         { name: 'Open Store', href: '/partner' },
@@ -102,28 +102,25 @@ const Footer = () => {
             ))}
           </div>
 
-          {/* Newsletter Section (White Theme) */}
+          {/* Contact Details Section */}
           <div className="lg:col-span-3 bg-white/10 p-10 border border-white/20 rounded-sm backdrop-blur-md">
-            <h4 className="text-white font-serif text-xl italic mb-3 text-center">The Private List</h4>
-            <p className="text-[10px] leading-relaxed text-white/70 mb-8 text-center uppercase tracking-[0.2em]">
-              Join for exclusive vintages
-            </p>
-            <form className="space-y-6">
-              <div className="relative group">
-                <input 
-                  type="email" 
-                  placeholder="EMAIL ADDRESS"
-                  className="w-full bg-transparent border-b border-white/30 py-3 text-[10px] tracking-widest focus:outline-none transition-all text-white placeholder:text-white/40"
-                />
-                <div className="absolute bottom-0 left-0 h-[1px] w-0 bg-white group-focus-within:w-full transition-all duration-500"></div>
+            <h4 className="text-white font-serif text-2xl italic mb-8 text-center drop-shadow-md">Contact Us</h4>
+            
+            <div className="space-y-8 text-center flex flex-col justify-center h-full">
+              
+
+              <div className="group">
+                <p className="text-[10px] leading-relaxed text-white/60 uppercase tracking-[0.3em] mb-2">
+                  Inquiries
+                </p>
+                <a href="mailto:info@ambivines.com" className="block text-[13px] text-white/90 font-serif group-hover:text-white transition-colors duration-300 mb-1">
+                  info@ambivines.com
+                </a>
+                <a href="tel:+919876543210" className="block text-[13px] text-white/90 font-serif group-hover:text-white transition-colors duration-300">
+                  +91 98765 43210
+                </a>
               </div>
-              <button 
-                className="w-full py-4 text-[10px] tracking-[0.4em] uppercase font-bold bg-white transition-all duration-500 hover:bg-stone-100 hover:shadow-xl"
-                style={{ color: brandColor }}
-              >
-                Subscribe
-              </button>
-            </form>
+            </div>
           </div>
         </div>
 

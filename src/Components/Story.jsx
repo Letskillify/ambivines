@@ -7,21 +7,21 @@ const images = [
     subtitle: "The Terroir",
     title: "Central India’s Only & Fastest Growing Vineyard",
     description: "From the heart of Madhya Pradesh, we craft wines rooted in passion, precision, and authenticity, with a vision to take Central India to the global stage.",
-    src: "/img/background1.png",
+    src: "https://res.cloudinary.com/duzwys877/image/upload/v1783860302/IMG_6407_gvbbry.jpg",
   },
   {
     id: 2,
     subtitle: "The Aging",
     title: "Rooted in Terroir",
     description: "Every bottle reflects the soil, climate, and character of the land it comes from.",
-    src: "/img/background2.png",
+    src: "https://res.cloudinary.com/duzwys877/image/upload/v1783860305/IMG_6408_gtbnza.jpg",
   },
   {
     id: 3,
     subtitle: "The Experience",
     title: "Soul in a Bottle",
     description: "Every pour tells a story of heritage, a symphony of taste that defines the modern Indian spirit.",
-    src: "/img/background3.png",
+    src: "https://res.cloudinary.com/duzwys877/image/upload/v1783860302/IMG_6409_yti5cg.jpg",
   }
 ];
 
@@ -115,7 +115,7 @@ const StorySection = () => {
             <Motion.div style={{ scale: scaleImage1 }} className="absolute inset-0 rounded-sm overflow-hidden shadow-xl origin-bottom">
               <img
                 src={images[0].src}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
                 loading="lazy"
                 alt="Layer 1"
               />

@@ -110,12 +110,12 @@ const EventsBhopal = () => {
             Stay connected with us for upcoming wine tasting events, exclusive experiences, and celebrations of fine wine culture in Bhopal.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
-            <Link 
+            {/* <Link 
               to="/book-tour"
               className="px-8 py-4 bg-[#811331] text-white rounded-full hover:bg-[#6a0e28] transition-colors"
             >
               <span className="uppercase tracking-[0.2em] text-sm font-medium">Book a Tasting</span>
-            </Link>
+            </Link> */}
             <a 
               href="https://instagram.com/ambivineyards" 
               target="_blank" 

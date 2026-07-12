@@ -60,7 +60,7 @@ const Hero = () => {
         {/* Hero Title */}
         <h1 className="mb-8 md:mb-14 overflow-hidden drop-shadow-lg">
           <span className={`block font-serif 
-            text-4xl sm:text-5xl md:text-7xl lg:text-7xl 
+            text-4xl sm:text-5xl md:text-6xl lg:text-6xl 
             text-white leading-[1.1] 
             transition-all duration-[1500ms] ease-[cubic-bezier(0.25,1,0.5,1)] ${loaded ? 'translate-y-0 opacity-100' : 'translate-y-[120%] opacity-0'
             }`}>
@@ -68,7 +68,7 @@ const Hero = () => {
           </span>
 
           <span className={`block font-serif italic 
-            text-4xl sm:text-5xl md:text-7xl lg:text-8xl 
+            text-4xl sm:text-5xl md:text-7xl lg:text-7xl 
             text-stone-100 leading-[1.1] 
             transition-all duration-[1500ms] delay-300 ease-[cubic-bezier(0.25,1,0.5,1)] ${loaded ? 'translate-y-0 opacity-100' : 'translate-y-[120%] opacity-0'
             }`}>

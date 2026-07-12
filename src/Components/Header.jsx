@@ -24,7 +24,7 @@ const Header = () => {
   /* ================= Navigation Data ================= */
   const navLinks = {
     left: [
-      { name: 'Book a Tour', href: '/book-tour' },
+      // { name: 'Book a Tour', href: '/book-tour' },
       { name: 'Stores', href: '/stores' },
       {
         name: 'About Us',
@@ -119,9 +119,10 @@ const Header = () => {
           <div className="text-center flex-shrink-0">
             <Link to="/">
               <img
-                src={isScrolled ? "/img/logoc.png" : "/img/logoc.png"}
+                src="/img/logoc.png"
                 alt="Logo"
                 className="w-28 md:w-32 h-auto transition-all duration-300"
+                style={{ filter: isScrolled ? 'brightness(0)' : 'none' }}
               />
             </Link>
           </div>

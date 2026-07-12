@@ -67,7 +67,7 @@ const OurPeople = () => {
     },
     {
       name: "Mr. Rajesh Patidar",
-      role: "Director Marketing and Sales",
+      role: "Director Marketing & Sales",
       description: "Rajesh Patidar drives brand growth and market expansion through strategic marketing and sales leadership, strengthening the company’s presence across domestic and global markets.",
       image: "https://res.cloudinary.com/duzwys877/image/upload/v1783869239/rajesh_jcvp7y.png"
     },

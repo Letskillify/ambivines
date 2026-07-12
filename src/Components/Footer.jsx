@@ -34,9 +34,9 @@ const Footer = () => {
       title: 'The Estate',
       links: [
         // { name: 'Book a Tour', href: '/book-tour' },
-        { name: 'Stores', href: '/stores' },
+        { name: 'Our Outlets', href: '/stores' },
         { name: 'Events', href: '/events' },
-        { name: 'Open Store', href: '/partner' },
+        { name: 'Get A Franchise', href: '/partner' },
       ],
     },
   ];

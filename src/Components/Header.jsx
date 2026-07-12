@@ -25,7 +25,7 @@ const Header = () => {
   const navLinks = {
     left: [
       // { name: 'Book a Tour', href: '/book-tour' },
-      { name: 'Stores', href: '/stores' },
+      { name: 'Our Outlets', href: '/stores' },
       {
         name: 'About Us',
         subLinks: [
@@ -48,7 +48,7 @@ const Header = () => {
         ],
       },
       { name: 'Events', href: '/events' },
-      { name: 'Open Store', href: '/partner' },
+      { name: 'Get A Franchise', href: '/partner' },
     ],
   };
 
@@ -172,7 +172,15 @@ const Header = () => {
 
           {/* Sidebar Links */}
           <div className="space-y-6">
-            {[...navLinks.left, ...navLinks.right].map((link) => (
+            {[
+              'About Us',
+              'Our Wines',
+              'Our Outlets',
+              'Events',
+              'Get A Franchise'
+            ].map(name => [...navLinks.left, ...navLinks.right].find(link => link.name === name))
+             .filter(Boolean)
+             .map((link) => (
               <div key={link.name} className="border-b border-stone-200 pb-4">
                 <div
                   className="flex justify-between items-center cursor-pointer"
@@ -221,7 +229,7 @@ const Header = () => {
           {/* Sidebar Footer */}
           <div className="mt-auto pt-10 border-t border-stone-200">
             <p className="text-[9px] tracking-widest uppercase text-stone-400">
-              AMBI VINES Estate © 2026
+              AMBI VINES © 2026
             </p>
           </div>
         </div>

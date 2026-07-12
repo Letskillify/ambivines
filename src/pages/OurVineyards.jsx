@@ -28,11 +28,11 @@ const VineyardSection = ({ title, subtitle, description, image, reversed, label 
   return (
     <section 
       ref={ref}
-      className={`py-24 px-6 md:px-12 max-w-7xl mx-auto transition-all duration-[1200ms] ease-out transform ${
+      className={`py-12 md:py-24 px-6 md:px-12 max-w-7xl mx-auto transition-all duration-[1200ms] ease-out transform ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
       }`}
     >
-      <div className={`flex flex-col ${reversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-12 lg:gap-24`}>
+      <div className={`flex flex-col ${reversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-6 lg:gap-24`}>
         {/* Image Side */}
         <div className="w-full lg:w-1/2">
           <div className="relative group overflow-hidden rounded-[2rem] shadow-sm">
@@ -46,7 +46,7 @@ const VineyardSection = ({ title, subtitle, description, image, reversed, label 
         </div>
 
         {/* Text Side */}
-        <div className="w-full lg:w-1/2 space-y-8">
+        <div className="w-full lg:w-1/2 space-y-6 md:space-y-8">
           <div className="space-y-4">
           <span className="text-[11px] uppercase tracking-[0.5em] font-bold block" style={{ color: '#811331' }}>
               {label}
@@ -81,7 +81,7 @@ const OurVineyards = () => {
       />
 
       {/* 2. ALTERNATING SHOWCASE */}
-      <div className="space-y-12">
+      <div className="space-y-4 md:space-y-12">
         <VineyardSection 
           label="The Location"
           title="The Titari Plateau"
@@ -111,7 +111,7 @@ const OurVineyards = () => {
       </div>
 
       {/* 3. VISUAL STORYTELLING (Cinematic Break) */}
-      <section className="relative mt-32 h-[80vh] flex items-center justify-center overflow-hidden">
+      <section className="relative mt-16 md:mt-32 h-[60vh] md:h-[80vh] flex items-center justify-center overflow-hidden">
         {/* Full-width Image */}
         <img 
           src="https://images.unsplash.com/photo-1535958636474-b021ee887b13?auto=format&fit=crop&q=80&w=2070" 
@@ -134,7 +134,7 @@ const OurVineyards = () => {
       </section>
 
       {/* 4. CLOSING STATEMENT */}
-      <section className="py-40 px-6 text-center max-w-2xl mx-auto">
+      <section className="py-20 md:py-40 px-6 text-center max-w-2xl mx-auto">
         <h4 className="text-[11px] uppercase tracking-[0.4em] font-bold mb-6" style={{ color: '#811331' }}>Experience the Source</h4>
         <p className="text-stone-800 font-serif text-2xl italic leading-relaxed">
           Every bottle of Ambi tells the story of our soil. We invite you to taste the landscape of Central India, distilled into its finest form.

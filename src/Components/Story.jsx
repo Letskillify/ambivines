@@ -63,7 +63,7 @@ const StorySection = () => {
       {/* 1. Changed 'top-0' to 'top-20' (adds 5rem / 80px space for your header)
         2. Adjusted height to subtract that same 5rem to avoid page overflow 
       */}
-      <div className="sticky top-20 h-[calc(100vh-5rem)] w-full flex flex-col justify-center py-8 md:py-12 overflow-hidden">
+      <div className="sticky top-20 h-[calc(75vh-5rem)] md:h-[calc(100vh-5rem)] w-full flex flex-col justify-center py-8 md:py-12 overflow-hidden">
 
         {/* Progress Bar - Adjusted top position slightly to align with content */}
         <div className="absolute left-8 top-[60%] -translate-y-1/2 h-32 w-[1px] bg-stone-300 hidden md:block z-50">
@@ -108,7 +108,7 @@ const StorySection = () => {
         </div>
 
         {/* IMAGE AREA - Reduced from 65vh to 55vh to ensure everything breathes easily */}
-        <div className="flex-none relative w-full max-w-5xl mx-auto px-4 flex items-center justify-center h-[55vh]">
+        <div className="flex-none relative w-full max-w-5xl mx-auto px-4 flex items-center justify-center h-[40vh] md:h-[55vh]">
           <div className="relative w-full h-full">
 
             {/* Base Layer */}

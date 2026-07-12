@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { WINE_LIST, CATEGORY_INFO } from '../data/wines';
 
 const WineDetail = () => {
@@ -10,13 +10,11 @@ const WineDetail = () => {
   const wineId = Number(id);
   const wine = WINE_LIST.find((item) => item.id === wineId);
 
-  // Handle active image state for the premium gallery viewer
-  const [activeImage, setActiveImage] = useState('');
+  // Handle slider state for the premium gallery viewer
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    if (wine) {
-      setActiveImage(wine.image);
-    }
+    setCurrentIndex(0);
   }, [wine]);
 
   if (!wine) {
@@ -43,6 +41,9 @@ const WineDetail = () => {
   
   // Gather all available images dynamically for the preview layout
   const images = [wine.image, wine.img2].filter(Boolean);
+
+  const nextSlide = () => setCurrentIndex((prev) => (prev + 1) % images.length);
+  const prevSlide = () => setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
 
   return (
     <main className="bg-[#FCFBFA] min-h-screen text-stone-900 font-sans antialiased">
@@ -91,25 +92,64 @@ const WineDetail = () => {
           
           {/* Left Column: Interactive Visual Showcase */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="relative aspect-[3/4] rounded-[1.5rem] overflow-hidden bg-stone-100 shadow-[0_30px_70px_-30px_rgba(28,25,23,0.3)] border border-stone-200/60">
-              <img
-                src={activeImage || wine.image}
-                alt={wine.name}
-                className="w-full h-full object-cover transition-all duration-700 ease-out"
-              />
+            <div className="relative aspect-[3/4] rounded-[1.5rem] overflow-hidden bg-stone-100 shadow-[0_30px_70px_-30px_rgba(28,25,23,0.3)] border border-stone-200/60 group">
+              <div 
+                className="flex transition-transform duration-700 ease-out h-full"
+                style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+              >
+                {images.map((img, idx) => (
+                  <div key={idx} className="w-full h-full flex-shrink-0 relative">
+                    <img
+                      src={img}
+                      alt={`${wine.name} slide ${idx + 1}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
+              
+              {/* Slider Arrows */}
+              {images.length > 1 && (
+                <>
+                  <button 
+                    onClick={prevSlide}
+                    className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 hover:bg-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all shadow-md z-10"
+                  >
+                    <ChevronLeft size={20} className="text-stone-800" />
+                  </button>
+                  <button 
+                    onClick={nextSlide}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 hover:bg-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all shadow-md z-10"
+                  >
+                    <ChevronRight size={20} className="text-stone-800" />
+                  </button>
+                  
+                  {/* Dots */}
+                  <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                    {images.map((_, idx) => (
+                      <button 
+                        key={idx} 
+                        onClick={() => setCurrentIndex(idx)}
+                        className={`h-2 rounded-full transition-all duration-300 ${currentIndex === idx ? 'bg-white w-6' : 'bg-white/50 w-2 hover:bg-white/80'}`}
+                        aria-label={`Go to slide ${idx + 1}`}
+                      />
+                    ))}
+                  </div>
+                </>
+              )}
             </div>
 
             {/* Thumbnail Preview Selector */}
             {images.length > 1 && (
               <div className="flex gap-4 justify-start items-center pt-2">
                 {images.map((img, index) => {
-                  const isActive = activeImage === img;
+                  const isActive = currentIndex === index;
                   return (
                     <button
                       key={index}
                       type="button"
-                      onClick={() => setActiveImage(img)}
+                      onClick={() => setCurrentIndex(index)}
                       className={`relative aspect-[3/4] w-20 rounded-xl overflow-hidden bg-stone-100 transition-all duration-300 ${
                         isActive 
                           ? 'ring-2 ring-[#811331] ring-offset-2 scale-95 opacity-100' 

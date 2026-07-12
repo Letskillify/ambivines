@@ -30,16 +30,18 @@ const WineCard = ({ wine, index }) => {
           src={wine.image}
           alt={wine.name}
           loading="lazy"
-          className="h-full w-full object-cover transition-transform duration-[2s] ease-out group-hover:scale-110 grayscale-[0.3] group-hover:grayscale-0"
+          className={`h-full w-full object-cover transition-all duration-1000 ease-out group-hover:scale-110 grayscale-[0.3] group-hover:grayscale-0 ${wine.img2 ? 'group-hover:opacity-0' : ''}`}
         />
+        {wine.img2 && (
+          <img
+            src={wine.img2}
+            alt={`${wine.name} alternate`}
+            loading="lazy"
+            className="absolute inset-0 h-full w-full object-cover opacity-0 transition-all duration-1000 ease-out group-hover:opacity-100  grayscale-[0.3] group-hover:grayscale-0 pointer-events-none"
+          />
+        )}
 
 
-        {/* Hover Overlay with Description */}
-        <div className="absolute inset-0 bg-stone-900/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center p-8">
-          <p className="text-white text-center text-xs md:text-sm tracking-[0.1em] leading-relaxed font-sans">
-            {wine.shortDescription}
-          </p>
-        </div>
       </div>
 
       {/* Card Info */}

@@ -128,7 +128,7 @@ const StorySection = () => {
                 <Motion.img
                   style={{ scale: innerScale2 }}
                   src={images[1].src}
-                  className="w-full h-full object-cover origin-bottom"
+                  className="w-full h-full object-contain origin-bottom"
                   loading="lazy"
                   alt="Layer 2"
                 />
@@ -142,7 +142,7 @@ const StorySection = () => {
                 <Motion.img
                   style={{ scale: innerScale3 }}
                   src={images[2].src}
-                  className="w-full h-full object-cover origin-bottom"
+                  className="w-full h-full object-contain origin-bottom"
                   loading="lazy"
                   alt="Layer 3"
                 />

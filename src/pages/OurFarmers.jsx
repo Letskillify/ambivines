@@ -100,7 +100,7 @@ const OurFarmers = () => {
         className="relative pt-40 pb-24 px-6 text-center bg-cover bg-center overflow-hidden"
         style={{
           backgroundImage:
-            "url('')",
+            "url('https://res.cloudinary.com/duzwys877/image/upload/v1783870088/farmers_pmhtnt.png')",
         }}
       >
         {/* Overlay */}

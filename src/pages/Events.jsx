@@ -21,12 +21,17 @@ const Events = () => {
     <main className="bg-[#FCFBFA] min-h-screen font-sans text-stone-900 overflow-x-hidden">
       
       {/* Hero Section */}
-      <section className="relative pt-40 pb-24 px-6 text-center bg-cover bg-center overflow-hidden"
-        style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1510892472924-6444e2a75c12?auto=format&fit=crop&q=80&w=2000')",
-        }}
-      >
+      <section className="relative pt-40 pb-24 px-6 text-center bg-cover bg-center overflow-hidden events-hero-bg">
+        <style>{`
+          .events-hero-bg {
+            background-image: url('https://res.cloudinary.com/duzwys877/image/upload/v1783870088/event2_sve4hn.png');
+          }
+          @media (min-width: 768px) {
+            .events-hero-bg {
+              background-image: url('https://res.cloudinary.com/duzwys877/image/upload/v1783870092/event_rm8nrm.png');
+            }
+          }
+        `}</style>
         {/* Overlay */}
         <div className="absolute inset-0 bg-stone-900/60"></div>
 

@@ -116,8 +116,8 @@ const Footer = () => {
                 <a href="mailto:info@ambivines.com" className="block text-[13px] text-white/90 font-serif group-hover:text-white transition-colors duration-300 mb-1">
                   info@ambivines.com
                 </a>
-                <a href="tel:+919876543210" className="block text-[13px] text-white/90 font-serif group-hover:text-white transition-colors duration-300">
-                  +91 98765 43210
+                <a href="tel:+917772010555" className="block text-[13px] text-white/90 font-serif group-hover:text-white transition-colors duration-300">
+                  +91 77720 10555
                 </a>
               </div>
             </div>

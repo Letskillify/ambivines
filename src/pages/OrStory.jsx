@@ -67,13 +67,17 @@ const OurStory = () => {
     <div className="bg-[#FCFBFA] min-h-screen font-sans text-stone-900 selection:bg-stone-200 selection:text-stone-900">
 
       {/* 1. CINEMATIC HERO SECTION */}
-      <section
-        className="relative pt-40 pb-24 px-6 text-center bg-cover bg-top overflow-hidden"
-        style={{
-          backgroundImage:
-            "url('https://res.cloudinary.com/duzwys877/image/upload/v1783866627/Gemini_Generated_Image_rhe5i3rhe5i3rhe5_fjxmjx.png')",
-        }}
-      >
+      <section className="relative pt-40 pb-24 px-6 text-center bg-cover bg-top overflow-hidden story-hero-bg">
+        <style>{`
+          .story-hero-bg {
+            background-image: url('https://res.cloudinary.com/duzwys877/image/upload/v1783870505/IMG_6443_l0ich9.png');
+          }
+          @media (min-width: 768px) {
+            .story-hero-bg {
+              background-image: url('https://res.cloudinary.com/duzwys877/image/upload/v1783866627/Gemini_Generated_Image_rhe5i3rhe5i3rhe5_fjxmjx.png');
+            }
+          }
+        `}</style>
         {/* Overlay */}
         <div className="absolute inset-0 bg-stone-900/55"></div>
 

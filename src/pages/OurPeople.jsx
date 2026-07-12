@@ -47,34 +47,34 @@ const TeamMemberCard = ({ name, role, description, image, delay }) => {
 const OurPeople = () => {
   const team = [
     {
-      name: "Mr. Motilal Ji Patidar",
+      name: "Mr. Motilal Patidar",
       role: "MD & CEO",
-      description: "As the Managing Director and CEO, Mr. Motilal Ji Patidar leads the organization with a clear vision, strategic foresight, and a strong commitment to sustainable growth and excellence.",
-      image: "img/1.jpeg"
+      description: "As the Managing Director and CEO, Mr. Motilal Patidar leads the organization with a clear vision, strategic foresight, and a strong commitment to sustainable growth and excellence.",
+      image: "https://res.cloudinary.com/duzwys877/image/upload/v1783869238/moti_o43azb.png"
     },
     {
       name: "Dr. Jitendra Patidar",
       role: "Director Production & Chief Winemaker",
       description: "Dr. Jitendra Patidar oversees production and winemaking, combining scientific expertise with innovative techniques to ensure consistent quality and world-class standards.",
-      image: "img/2.jpeg"
+      image: "https://res.cloudinary.com/duzwys877/image/upload/v1783869241/jeetendra_kltrwa.png"
     },
     {
       name: "Mr. Amrit Patidar",
       role: "Director Finance",
       description: "Mr. Amrit Patidar manages the financial strategy and operations, ensuring fiscal discipline, transparency, and long-term financial stability for the organization.",
-      image: "img/3.jpeg"
+      image: "https://res.cloudinary.com/duzwys877/image/upload/v1783869334/amrit_jzfbby.png"
     },
     {
-      name: "Rajesh Patidar",
+      name: "Mr. Rajesh Patidar",
       role: "Director Marketing and Sales",
       description: "Rajesh Patidar drives brand growth and market expansion through strategic marketing and sales leadership, strengthening the company’s presence across domestic and global markets.",
-      image: "img/4.jpeg"
+      image: "https://res.cloudinary.com/duzwys877/image/upload/v1783869239/rajesh_jcvp7y.png"
     },
     {
-      name: "Amit Nigam",
+      name: "Mr. Amit Nigam",
       role: "Manager – Events & International Sales",
       description: "Dr. Amit Nigam manages high-impact events and international sales initiatives, building strong global relationships and promoting the brand on international platforms.",
-      image: "img/6.jpeg"
+      image: "https://res.cloudinary.com/duzwys877/image/upload/v1783869241/amit_acmexx.png"
     }
 
 

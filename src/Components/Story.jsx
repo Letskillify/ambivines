@@ -115,7 +115,7 @@ const StorySection = () => {
             <Motion.div style={{ scale: scaleImage1 }} className="absolute inset-0 rounded-sm overflow-hidden shadow-xl origin-bottom">
               <img
                 src={images[0].src}
-                className="w-full h-full object-contain"
+                className="w-full h-full object-cover md:object-contain"
                 loading="lazy"
                 alt="Layer 1"
               />
@@ -128,7 +128,7 @@ const StorySection = () => {
                 <Motion.img
                   style={{ scale: innerScale2 }}
                   src={images[1].src}
-                  className="w-full h-full object-contain origin-bottom"
+                  className="w-full h-full object-cover md:object-contain origin-bottom"
                   loading="lazy"
                   alt="Layer 2"
                 />
@@ -142,7 +142,7 @@ const StorySection = () => {
                 <Motion.img
                   style={{ scale: innerScale3 }}
                   src={images[2].src}
-                  className="w-full h-full object-contain origin-bottom"
+                  className="w-full h-full object-cover md:object-contain origin-bottom"
                   loading="lazy"
                   alt="Layer 3"
                 />

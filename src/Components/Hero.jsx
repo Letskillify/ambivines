@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ChevronDown } from 'lucide-react';
-
+import { Link } from 'react-router-dom';
 const Hero = () => {
   const [loaded, setLoaded] = useState(false);
 
@@ -79,20 +79,23 @@ const Hero = () => {
         {/* Description */}
         <p className={`max-w-lg text-stone-200/90 font-light capitalize leading-relaxed tracking-wider mb-16 transition-all duration-1000 delay-700 font-sans text-sm md:text-base ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
-          From the heart of Madhya Pradesh, we craft wines rooted in passion, precision, and authenticity, with a vision to take Central India to the global stage.
+          From the heart of Madhya Pradesh, we craft wines rooted in passion, precision & authenticity, with a vision to take Central India to the global stage.
         </p>
 
         {/* CTA Buttons */}
         <div className={`flex flex-col sm:flex-row items-center gap-6 transition-all duration-1000 delay-1000 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
+            
           <button
             className="group relative min-w-[200px] px-8 py-4 overflow-hidden transition-all duration-300 ease-out hover:shadow-xl hover:-translate-y-0.5"
             style={{ backgroundColor: themeColor }}
           >
+              <Link to="/wines">
             <span className="relative z-10 uppercase text-[11px] tracking-[0.4em] font-bold font-sans text-white">
-              Explore Wines
+              Explore All Wines
             </span>
             <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </Link>
           </button>
 
           {/* <button className="group relative min-w-[200px] px-8 py-4 border-[1px] border-white/40 text-white overflow-hidden transition-all duration-300 ease-out hover:border-transparent">

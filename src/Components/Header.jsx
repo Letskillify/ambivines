@@ -119,7 +119,7 @@ const Header = () => {
           <div className="text-center flex-shrink-0">
             <Link to="/">
               <img
-                src={isScrolled ? "/img/logob.png" : "/img/logoc.png"}
+                src={isScrolled ? "/img/logoc.png" : "/img/logoc.png"}
                 alt="Logo"
                 className="w-28 md:w-32 h-auto transition-all duration-300"
               />

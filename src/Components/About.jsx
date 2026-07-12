@@ -1,6 +1,6 @@
 import React from 'react';
 import Reveal from './Reveal';
-
+import { Link } from 'react-router-dom';
 const StorySection = () => {
   return (
     <section className="bg-[#fcfaf8] py-20 md:py-32 px-6 md:px-12 overflow-hidden relative">
@@ -73,9 +73,11 @@ const StorySection = () => {
                     type="button"
                     className="group relative inline-flex items-center justify-center w-full sm:w-auto px-10 md:px-12 py-4 border border-[#811331] text-[#811331] overflow-hidden transition-all duration-500 ease-out hover:text-white"
                   >
+                    <Link to="/our-story">
                     <span className="relative z-10 uppercase text-[10px] md:text-[11px] tracking-[0.3em] md:tracking-[0.4em] font-bold font-sans">
-                      Discover Our Philosophy
+                     More About Us
                     </span>
+                    </Link>
                     <div
                       className="absolute inset-x-0 bottom-0 h-0 group-hover:h-full transition-all duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]"
                       style={{ backgroundColor: '#811331' }}

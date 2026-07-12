@@ -68,10 +68,10 @@ const OurStory = () => {
 
       {/* 1. CINEMATIC HERO SECTION */}
       <section
-        className="relative pt-40 pb-24 px-6 text-center bg-cover bg-center overflow-hidden"
+        className="relative pt-40 pb-24 px-6 text-center bg-cover bg-top overflow-hidden"
         style={{
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1504275107627-0c2ba7a43dba?auto=format&fit=crop&q=80&w=2000')",
+            "url('https://res.cloudinary.com/duzwys877/image/upload/v1783866627/Gemini_Generated_Image_rhe5i3rhe5i3rhe5_fjxmjx.png')",
         }}
       >
         {/* Overlay */}

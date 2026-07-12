@@ -63,7 +63,7 @@ const StorySection = () => {
       {/* 1. Changed 'top-0' to 'top-20' (adds 5rem / 80px space for your header)
         2. Adjusted height to subtract that same 5rem to avoid page overflow 
       */}
-      <div className="sticky top-20 h-[calc(100vh-5rem)] w-full flex flex-col justify-between md:justify-center pt-8 pb-16 md:py-12 overflow-hidden">
+      <div className="sticky top-20 h-[calc(100vh-5rem)] w-full flex flex-col justify-start md:justify-center pt-8 md:py-12 overflow-hidden">
 
         {/* Progress Bar - Adjusted top position slightly to align with content */}
         <div className="absolute left-8 top-[60%] -translate-y-1/2 h-32 w-[1px] bg-stone-300 hidden md:block z-50">
@@ -74,7 +74,7 @@ const StorySection = () => {
         </div>
 
         {/* TEXT AREA */}
-        <div className="flex-none relative w-full max-w-4xl mx-auto px-6 text-center z-40 h-[120px] mb-6">
+        <div className="flex-none relative w-full max-w-4xl mx-auto px-6 text-center z-40 h-[100px] mb-8 md:mb-6">
           
           {/* Text 1 */}
           <Motion.div style={{ opacity: opacity1, y: y1 }} className="absolute inset-0 flex flex-col items-center justify-start pointer-events-none space-y-3">
@@ -107,15 +107,15 @@ const StorySection = () => {
           </Motion.div>
         </div>
 
-        {/* IMAGE AREA */}
-        <div className="relative w-full max-w-5xl mx-auto px-4 flex items-center justify-center aspect-[4/3] md:aspect-auto md:h-[55vh]">
-          <div className="relative w-full h-full overflow-hidden">
+        {/* IMAGE AREA (Editorial Frame Redesign) */}
+        <div className="relative w-full max-w-5xl mx-auto px-6 flex items-center justify-center aspect-square md:aspect-auto md:h-[55vh]">
+          <div className="relative w-full h-full overflow-hidden rounded-[2rem] border-[12px] border-white shadow-2xl bg-white md:border-none md:rounded-none md:bg-transparent md:shadow-none">
 
             {/* Base Layer */}
             <Motion.div style={{ scale: scaleImage1 }} className="absolute inset-0 rounded-sm overflow-hidden shadow-xl origin-bottom">
               <img
                 src={images[0].src}
-                className="w-full h-full object-cover md:object-contain"
+                className="w-full h-full object-cover object-center md:object-contain"
                 loading="lazy"
                 alt="Layer 1"
               />
@@ -128,7 +128,7 @@ const StorySection = () => {
                 <Motion.img
                   style={{ scale: innerScale2 }}
                   src={images[1].src}
-                  className="w-full h-full object-cover md:object-contain origin-bottom"
+                  className="w-full h-full object-cover object-center md:object-contain origin-bottom"
                   loading="lazy"
                   alt="Layer 2"
                 />
@@ -142,7 +142,7 @@ const StorySection = () => {
                 <Motion.img
                   style={{ scale: innerScale3 }}
                   src={images[2].src}
-                  className="w-full h-full object-cover md:object-contain origin-bottom"
+                  className="w-full h-full object-cover object-center md:object-contain origin-bottom"
                   loading="lazy"
                   alt="Layer 3"
                 />

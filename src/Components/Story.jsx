@@ -58,12 +58,12 @@ const StorySection = () => {
   const innerScale3 = useTransform(scrollYProgress, [0.6, 0.8], [1.2, 1]);
 
   return (
-    <section ref={containerRef} className="relative min-h-[400vh] bg-[#F4F1EE]">
+    <section ref={containerRef} className="relative min-h-[300vh] md:min-h-[400vh] bg-[#F4F1EE]">
       
       {/* 1. Changed 'top-0' to 'top-20' (adds 5rem / 80px space for your header)
         2. Adjusted height to subtract that same 5rem to avoid page overflow 
       */}
-      <div className="sticky top-20 h-[calc(75vh-5rem)] md:h-[calc(100vh-5rem)] w-full flex flex-col justify-center py-8 md:py-12 overflow-hidden">
+      <div className="sticky top-20 h-[calc(100vh-5rem)] w-full flex flex-col justify-between md:justify-center pt-8 pb-16 md:py-12 overflow-hidden">
 
         {/* Progress Bar - Adjusted top position slightly to align with content */}
         <div className="absolute left-8 top-[60%] -translate-y-1/2 h-32 w-[1px] bg-stone-300 hidden md:block z-50">
@@ -107,9 +107,9 @@ const StorySection = () => {
           </Motion.div>
         </div>
 
-        {/* IMAGE AREA - Reduced from 65vh to 55vh to ensure everything breathes easily */}
-        <div className="flex-none relative w-full max-w-5xl mx-auto px-4 flex items-center justify-center h-[40vh] md:h-[55vh]">
-          <div className="relative w-full h-full">
+        {/* IMAGE AREA */}
+        <div className="relative w-full max-w-5xl mx-auto px-4 flex items-center justify-center aspect-[4/3] md:aspect-auto md:h-[55vh]">
+          <div className="relative w-full h-full overflow-hidden">
 
             {/* Base Layer */}
             <Motion.div style={{ scale: scaleImage1 }} className="absolute inset-0 rounded-sm overflow-hidden shadow-xl origin-bottom">

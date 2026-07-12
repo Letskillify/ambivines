@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import SubPageHero from '../Components/SubPageHero';
 
 const FarmerVideoCard = ({ videoUrl, index, delay }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -96,35 +97,15 @@ const OurFarmers = () => {
     <div className="bg-[#FCFBFA] min-h-screen font-sans text-stone-900 pb-32">
       
       {/* 1. CINEMATIC HERO SECTION */}
-      <section
-        className="relative pt-40 pb-24 px-6 text-center bg-cover bg-center overflow-hidden"
-        style={{
-          backgroundImage:
-            "url('https://res.cloudinary.com/duzwys877/image/upload/v1783870088/farmers_pmhtnt.png')",
-        }}
-      >
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-stone-900/55"></div>
-
-        {/* Content */}
-        <div className="relative max-w-4xl mx-auto">
-          <span className="text-[10px] uppercase tracking-[0.5em] text-white/70 mb-4 block font-bold">
-            The heart of our harvest, rooted in tradition and passion.
-          </span>
-
-          <h1 className="text-5xl md:text-7xl font-serif mb-8 italic text-white">
-            Our Farmers
-          </h1>
-
-          <nav className="flex items-center justify-center space-x-3 text-[10px] uppercase tracking-widest text-white/70">
-            <a href="/" className="hover:text-white transition-colors">
-              Home
-            </a>
-            <span className="opacity-40">/</span>
-            <span className="text-white font-bold">Our Farmers</span>
-          </nav>
-        </div>
-      </section>
+      <SubPageHero
+        title="Our Farmers"
+        subtitle="The heart of our harvest, rooted in tradition and passion."
+        bgImageDesktop="https://res.cloudinary.com/duzwys877/image/upload/v1783870088/farmers_pmhtnt.png"
+        breadcrumbs={[
+          { label: "Home", link: "/" },
+          { label: "Our Farmers" }
+        ]}
+      />
 
       {/* VIDEO GALLERY GRID - 3 in a row */}
       <section className="px-6 max-w-7xl mx-auto mt-20">

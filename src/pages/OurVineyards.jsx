@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import SubPageHero from '../Components/SubPageHero';
 
 // Custom Hook for Scroll Reveal
 const useElementOnScreen = (options) => {
@@ -69,36 +70,15 @@ const OurVineyards = () => {
   return (
     <main className="bg-[#F9F8F6] min-h-screen font-sans text-stone-900 overflow-x-hidden">
       
-      {/* 1. CINEMATIC HERO / TITLE SECTION */}
-      <section
-        className="relative pt-40 pb-24 px-6 text-center bg-cover bg-center overflow-hidden"
-        style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1474844331793-c25076ecdf6d?auto=format&fit=crop&q=80&w=2000')",
-        }}
-      >
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-stone-900/55"></div>
-
-        {/* Content */}
-        <div className="relative max-w-4xl mx-auto">
-          <span className="text-[10px] uppercase tracking-[0.5em] text-white/70 mb-4 block font-bold">
-            Origin & Earth
-          </span>
-
-          <h1 className="text-5xl md:text-7xl font-serif mb-8 italic text-white">
-            Our Vineyards
-          </h1>
-
-          <nav className="flex items-center justify-center space-x-3 text-[10px] uppercase tracking-widest text-white/70">
-            <a href="/" className="hover:text-white transition-colors">
-              Home
-            </a>
-            <span className="opacity-40">/</span>
-            <span className="text-white font-bold">Our Vineyards</span>
-          </nav>
-        </div>
-      </section>
+      <SubPageHero
+        title="Our Vineyards"
+        subtitle="Origin & Earth"
+        bgImageDesktop="https://images.unsplash.com/photo-1474844331793-c25076ecdf6d?auto=format&fit=crop&q=80&w=2000"
+        breadcrumbs={[
+          { label: "Home", link: "/" },
+          { label: "Our Vineyards" }
+        ]}
+      />
 
       {/* 2. ALTERNATING SHOWCASE */}
       <div className="space-y-12">

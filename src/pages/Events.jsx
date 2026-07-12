@@ -1,4 +1,5 @@
 import React from 'react';
+import SubPageHero from '../Components/SubPageHero';
 import { Instagram, Play } from 'lucide-react';
 
 const Events = () => {
@@ -21,29 +22,21 @@ const Events = () => {
     <main className="bg-[#FCFBFA] min-h-screen font-sans text-stone-900 overflow-x-hidden">
       
       {/* Hero Section */}
-      <section className="relative pt-40 pb-24 px-6 text-center bg-cover bg-center overflow-hidden events-hero-bg">
-        <style>{`
-          .events-hero-bg {
-            background-image: url('https://res.cloudinary.com/duzwys877/image/upload/v1783870088/event2_sve4hn.png');
-          }
-          @media (min-width: 768px) {
-            .events-hero-bg {
-              background-image: url('https://res.cloudinary.com/duzwys877/image/upload/v1783870092/event_rm8nrm.png');
-            }
-          }
-        `}</style>
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-stone-900/60"></div>
+      <SubPageHero
+        title="Events"
+        subtitle="Curated Wine Experiences"
+        bgImageDesktop="https://res.cloudinary.com/duzwys877/image/upload/v1783870092/event_rm8nrm.png"
+        bgImageMobile="https://res.cloudinary.com/duzwys877/image/upload/v1783870088/event2_sve4hn.png"
+        breadcrumbs={[
+          { label: "Home", link: "/" },
+          { label: "Events" }
+        ]}
+      />
 
-        {/* Content */}
-        <div className="relative max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-serif mb-6 italic text-white">
-            Events
-          </h1>
-          <h2 className="text-2xl md:text-3xl font-light text-white/90 mb-8">
-            Curated Wine Experiences Across Madhya Pradesh
-          </h2>
-          <p className="text-stone-200 font-light leading-relaxed max-w-2xl mx-auto text-lg">
+      {/* Intro Description */}
+      <section className="py-12 px-6 text-center bg-white border-b border-stone-100">
+        <div className="max-w-2xl mx-auto">
+          <p className="text-stone-600 text-sm md:text-base font-light leading-relaxed">
             Ambi Vineyards regularly hosts wine tasting events, creating thoughtfully curated experiences for wine enthusiasts. 
             Our events have been widely appreciated for their ambience, quality wines, and engaging concepts.
           </p>

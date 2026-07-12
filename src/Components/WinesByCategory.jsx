@@ -4,6 +4,7 @@ import { ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-react';
 import Button from './Button';
 import WineCard from './WineCard';
 import { WINE_LIST, CATEGORY_INFO } from '../data/wines';
+import SubPageHero from './SubPageHero';
 
 const WinesByCategory = () => {
   const { category } = useParams();
@@ -45,19 +46,17 @@ const WinesByCategory = () => {
            style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }} />
 
       {/* Cinematic Hero */}
-      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden bg-stone-900">
-        <div className={`absolute inset-0 transition-transform duration-[3000ms] ${isLoaded ? 'scale-105' : 'scale-110'}`}>
-          <img src={categoryInfo.heroImage} alt="" className="w-full h-full object-cover opacity-60" />
-        </div>
-        <div className="relative z-10 text-center px-6">
-          <span className="text-[10px] uppercase tracking-[0.8em] text-stone-300 mb-4 block font-medium">
-            {categoryInfo.subtitle}
-          </span>
-          <h1 className="text-6xl md:text-8xl font-serif text-white mb-6 font-light tracking-tight">
-            {categoryInfo.title}
-          </h1>
-        </div>
-      </section>
+      <SubPageHero
+        title={categoryInfo.title}
+        subtitle={categoryInfo.subtitle}
+        bgImageDesktop="https://res.cloudinary.com/duzwys877/image/upload/v1783872877/wine_o4lmdd.png"
+        bgImageMobile="https://res.cloudinary.com/duzwys877/image/upload/v1783872885/wine2_y2gtu0.png"
+        breadcrumbs={[
+          { label: "Home", link: "/" },
+          { label: "Collection", link: "/wines" },
+          ...(isAllView ? [] : [{ label: categoryInfo.title }])
+        ]}
+      />
 
       {/* Product Section */}
       <section className="py-20 px-6 md:px-12 max-w-[1400px] mx-auto">

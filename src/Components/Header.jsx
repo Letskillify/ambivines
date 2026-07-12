@@ -98,25 +98,29 @@ const Header = () => {
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
 
-          {/* Desktop Left */}
-          <div className="hidden lg:flex flex-1 gap-8">
-            {navLinks.left.map((link) => (
-              <NavItem key={link.name} link={link} />
-            ))}
+          {/* Left Element: Desktop links OR Mobile Logo */}
+          <div className="flex flex-1 items-center justify-start">
+            {/* Desktop Left */}
+            <div className="hidden lg:flex gap-8">
+              {navLinks.left.map((link) => (
+                <NavItem key={link.name} link={link} />
+              ))}
+            </div>
+            {/* Mobile Logo */}
+            <div className="lg:hidden">
+              <Link to="/">
+                <img
+                  src="/img/logoc.png"
+                  alt="Logo"
+                  className="w-20 h-auto transition-all duration-300"
+                  style={{ filter: isScrolled ? 'brightness(0)' : 'none' }}
+                />
+              </Link>
+            </div>
           </div>
 
-          {/* Mobile Menu */}
-          <div className="lg:hidden flex-1">
-            <button
-              onClick={() => setMobileMenuOpen(true)}
-              className={isScrolled ? 'text-stone-800' : 'text-white'}
-            >
-              <Menu size={26} strokeWidth={1.5} />
-            </button>
-          </div>
-
-          {/* Logo */}
-          <div className="text-center flex-shrink-0">
+          {/* Center Element: Desktop Logo Only */}
+          <div className="hidden lg:block text-center flex-shrink-0">
             <Link to="/">
               <img
                 src="/img/logoc.png"
@@ -127,18 +131,24 @@ const Header = () => {
             </Link>
           </div>
 
-
-
-          {/* Desktop Right */}
-          <div className="hidden lg:flex flex-1 justify-end items-center gap-8">
-            {navLinks.right.map((link) => (
-              <NavItem key={link.name} link={link} />
-            ))}
+          {/* Right Element: Desktop Right links OR Mobile Sidebar Menu Button */}
+          <div className="flex flex-1 items-center justify-end">
+            {/* Desktop Right */}
+            <div className="hidden lg:flex gap-8 items-center">
+              {navLinks.right.map((link) => (
+                <NavItem key={link.name} link={link} />
+              ))}
+            </div>
+            {/* Mobile Menu Button - aligned right */}
+            <div className="lg:hidden">
+              <button
+                onClick={() => setMobileMenuOpen(true)}
+                className={isScrolled ? 'text-stone-800' : 'text-white'}
+              >
+                <Menu size={24} strokeWidth={1.5} />
+              </button>
+            </div>
           </div>
-
-
-          {/* Mobile Spacer */}
-          <div className="lg:hidden flex-1" />
         </div>
       </nav>
 

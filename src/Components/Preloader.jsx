@@ -86,7 +86,7 @@ const Preloader = () => {
                 >
                     {/* Logo instead of title */}
                     <img
-                        src="/img/logoc.png"
+                        src="/img/logo_white.png"
                         alt="Ambi Vines Logo"
                         className="
       mx-auto

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import SubPageHero from '../Components/SubPageHero';
 
 const OurStory = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -67,35 +68,16 @@ const OurStory = () => {
     <div className="bg-[#FCFBFA] min-h-screen font-sans text-stone-900 selection:bg-stone-200 selection:text-stone-900">
 
       {/* 1. CINEMATIC HERO SECTION */}
-      <section className="relative pt-40 pb-24 px-6 text-center bg-cover bg-top overflow-hidden story-hero-bg">
-        <style>{`
-          .story-hero-bg {
-            background-image: url('https://res.cloudinary.com/duzwys877/image/upload/v1783870505/IMG_6443_l0ich9.png');
-          }
-          @media (min-width: 768px) {
-            .story-hero-bg {
-              background-image: url('https://res.cloudinary.com/duzwys877/image/upload/v1783866627/Gemini_Generated_Image_rhe5i3rhe5i3rhe5_fjxmjx.png');
-            }
-          }
-        `}</style>
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-stone-900/55"></div>
-
-        {/* Content */}
-        <div className="relative max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-serif mb-8 italic text-white">
-            Our Story
-          </h1>
-
-          <nav className="flex items-center justify-center space-x-3 text-[10px] uppercase tracking-widest text-[#f3d2dd]">
-            <a href="/" className="hover:text-white transition-colors">
-              Home
-            </a>
-            <span className="opacity-40">/</span>
-            <span className="text-white font-bold">Our Story</span>
-          </nav>
-        </div>
-      </section>
+      <SubPageHero
+        title="Our Story"
+        bgImageDesktop="https://res.cloudinary.com/duzwys877/image/upload/v1783866627/Gemini_Generated_Image_rhe5i3rhe5i3rhe5_fjxmjx.png"
+        bgImageMobile="https://res.cloudinary.com/duzwys877/image/upload/v1783870505/IMG_6443_l0ich9.png"
+        bgPosition="bg-top"
+        breadcrumbs={[
+          { label: "Home", link: "/" },
+          { label: "Our Story" }
+        ]}
+      />
 
       {/* 2. THE NARRATIVE SECTION */}
       <section className="py-20 px-6">

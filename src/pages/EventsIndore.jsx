@@ -1,42 +1,34 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { ArrowLeft, Calendar, MapPin } from 'lucide-react';
+import SubPageHero from '../Components/SubPageHero';
 
 const EventsIndore = () => {
   return (
     <main className="bg-[#FCFBFA] min-h-screen font-sans text-stone-900 overflow-x-hidden">
       
       {/* Hero Section */}
-      <section className="relative pt-40 pb-24 px-6 text-center bg-cover bg-center overflow-hidden"
-        style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1504275107627-0c2ba7a43dba?auto=format&fit=crop&q=80&w=2000')",
-        }}
+      <SubPageHero
+        bgImageDesktop="https://images.unsplash.com/photo-1504275107627-0c2ba7a43dba?auto=format&fit=crop&q=80&w=2000"
       >
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-stone-900/60"></div>
-
-        {/* Content */}
-        <div className="relative max-w-4xl mx-auto">
-          <Link 
-            to="/events"
-            className="inline-flex items-center gap-2 text-white/80 hover:text-white mb-6 transition-colors"
-          >
-            <ArrowLeft size={20} />
-            <span className="text-sm uppercase tracking-[0.2em]">Back to Events</span>
-          </Link>
-          
-          <div className="flex items-center justify-center gap-4 mb-6">
-            <MapPin className="text-white" size={24} />
-            <h1 className="text-5xl md:text-7xl font-serif italic text-white">
-              Indore
-            </h1>
-          </div>
-          <h2 className="text-3xl md:text-4xl font-light text-white/90 mb-8">
-            Wine Tasting Events
-          </h2>
+        <Link 
+          to="/events"
+          className="inline-flex items-center gap-2 text-white/80 hover:text-white mb-4 transition-colors"
+        >
+          <ArrowLeft size={16} />
+          <span className="text-[10px] uppercase tracking-[0.2em] font-bold">Back to Events</span>
+        </Link>
+        
+        <div className="flex items-center justify-center gap-3 mb-2">
+          <MapPin className="text-white" size={20} />
+          <h1 className="text-4xl md:text-5xl font-serif italic text-white leading-tight">
+            Indore
+          </h1>
         </div>
-      </section>
+        <h2 className="text-xs md:text-sm uppercase tracking-widest text-[#f5d2dd]">
+          Wine Tasting Events
+        </h2>
+      </SubPageHero>
 
       {/* Main Content */}
       <section className="py-20 px-6 bg-white">

@@ -1,40 +1,55 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaStore, FaHandshake, FaChartLine } from "react-icons/fa";
+import SubPageHero from "../Components/SubPageHero";
 
 const FranchisePage = () => {
+    const [formData, setFormData] = useState({
+        firstName: "",
+        lastName: "",
+        mobile: "",
+        email: "",
+        city: "",
+        pincode: "",
+        message: ""
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }));
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        
+        const message = `*New Franchise Inquiry*\n\n` +
+            `*Name:* ${formData.firstName} ${formData.lastName}\n` +
+            `*Mobile:* ${formData.mobile}\n` +
+            `*Email:* ${formData.email}\n` +
+            `*Proposed City/Location:* ${formData.city || "N/A"}\n` +
+            `*Pincode:* ${formData.pincode || "N/A"}\n` +
+            `*Message:* ${formData.message || "N/A"}`;
+            
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappUrl = `https://wa.me/917772010555?text=${encodedMessage}`;
+        
+        window.open(whatsappUrl, '_blank');
+    };
     return (
         <div className="bg-[#FCFBFA] min-h-screen font-sans text-stone-900">
 
             {/* 1. HERO SECTION (Cinema Style) */}
-            <section
-                className="relative pt-40 pb-24 px-6 text-center bg-cover bg-center overflow-hidden"
-                style={{
-                    backgroundImage:
-                        "url('https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?auto=format&fit=crop&q=80&w=2000')",
-                }}
-            >
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-stone-900/55"></div>
-
-                {/* Content */}
-                <div className="relative max-w-4xl mx-auto">
-                    <span className="text-[10px] uppercase tracking-[0.5em] text-[#f3d2dd] mb-4 block font-bold">
-                        Franchise Opportunity
-                    </span>
-
-                    <h1 className="text-5xl md:text-7xl font-serif mb-8 italic text-white">
-                        Partner With Us
-                    </h1>
-
-                    <nav className="flex items-center justify-center space-x-3 text-[10px] uppercase tracking-widest text-[#f3d2dd]">
-                        <a href="/" className="hover:text-white transition-colors">
-                            Home
-                        </a>
-                        <span className="opacity-40">/</span>
-                        <span className="text-white font-bold">Franchise</span>
-                    </nav>
-                </div>
-            </section>
+            <SubPageHero
+                title="Partner With Us"
+                subtitle="Franchise Opportunity"
+                bgImageDesktop="https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?auto=format&fit=crop&q=80&w=2000"
+                breadcrumbs={[
+                    { label: "Home", link: "/" },
+                    { label: "Franchise" }
+                ]}
+            />
 
 
             {/* 2. THE VISION (Introduction) */}
@@ -120,37 +135,37 @@ const FranchisePage = () => {
                             <h2 className="text-4xl md:text-5xl font-serif italic">Express Your Interest</h2>
                         </div>
 
-                        <form className="space-y-12" onSubmit={(e) => e.preventDefault()}>
+                        <form className="space-y-12" onSubmit={handleSubmit}>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                                 <div className="group space-y-2">
                                     <label className="text-[10px] uppercase tracking-[0.3em] font-bold text-stone-400 group-focus-within:text-stone-900 transition-colors">First Name *</label>
-                                    <input type="text" placeholder="e.g. Rahul" className="w-full bg-transparent border-b border-stone-200 py-4 focus:outline-none focus:border-stone-900 transition-colors text-sm font-light" required />
+                                    <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} placeholder="e.g. Rahul" className="w-full bg-transparent border-b border-stone-200 py-4 focus:outline-none focus:border-stone-900 transition-colors text-sm font-light" required />
                                 </div>
                                 <div className="group space-y-2">
                                     <label className="text-[10px] uppercase tracking-[0.3em] font-bold text-stone-400 group-focus-within:text-stone-900 transition-colors">Last Name *</label>
-                                    <input type="text" placeholder="e.g. Singh" className="w-full bg-transparent border-b border-stone-200 py-4 focus:outline-none focus:border-stone-900 transition-colors text-sm font-light" required />
+                                    <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} placeholder="e.g. Singh" className="w-full bg-transparent border-b border-stone-200 py-4 focus:outline-none focus:border-stone-900 transition-colors text-sm font-light" required />
                                 </div>
                                 <div className="group space-y-2">
                                     <label className="text-[10px] uppercase tracking-[0.3em] font-bold text-stone-400 group-focus-within:text-stone-900 transition-colors">Mobile Number *</label>
-                                    <input type="tel" placeholder="+91" className="w-full bg-transparent border-b border-stone-200 py-4 focus:outline-none focus:border-stone-900 transition-colors text-sm font-light" required />
+                                    <input type="tel" name="mobile" value={formData.mobile} onChange={handleChange} placeholder="+91" className="w-full bg-transparent border-b border-stone-200 py-4 focus:outline-none focus:border-stone-900 transition-colors text-sm font-light" required />
                                 </div>
                                 <div className="group space-y-2">
                                     <label className="text-[10px] uppercase tracking-[0.3em] font-bold text-stone-400 group-focus-within:text-stone-900 transition-colors">Email Address *</label>
-                                    <input type="email" placeholder="email@example.com" className="w-full bg-transparent border-b border-stone-200 py-4 focus:outline-none focus:border-stone-900 transition-colors text-sm font-light" required />
+                                    <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="email@example.com" className="w-full bg-transparent border-b border-stone-200 py-4 focus:outline-none focus:border-stone-900 transition-colors text-sm font-light" required />
                                 </div>
                                 <div className="group space-y-2">
                                     <label className="text-[10px] uppercase tracking-[0.3em] font-bold text-stone-400 group-focus-within:text-stone-900 transition-colors">City</label>
-                                    <input type="text" placeholder="Proposed Location" className="w-full bg-transparent border-b border-stone-200 py-4 focus:outline-none focus:border-stone-900 transition-colors text-sm font-light" />
+                                    <input type="text" name="city" value={formData.city} onChange={handleChange} placeholder="Proposed Location" className="w-full bg-transparent border-b border-stone-200 py-4 focus:outline-none focus:border-stone-900 transition-colors text-sm font-light" />
                                 </div>
                                 <div className="group space-y-2">
                                     <label className="text-[10px] uppercase tracking-[0.3em] font-bold text-stone-400 group-focus-within:text-stone-900 transition-colors">PinCode</label>
-                                    <input type="text" placeholder="XXXXXX" className="w-full bg-transparent border-b border-stone-200 py-4 focus:outline-none focus:border-stone-900 transition-colors text-sm font-light" />
+                                    <input type="text" name="pincode" value={formData.pincode} onChange={handleChange} placeholder="XXXXXX" className="w-full bg-transparent border-b border-stone-200 py-4 focus:outline-none focus:border-stone-900 transition-colors text-sm font-light" />
                                 </div>
                             </div>
 
                             <div className="group space-y-2">
                                 <label className="text-[10px] uppercase tracking-[0.3em] font-bold text-stone-400">Message / Comment</label>
-                                <textarea rows="4" placeholder="Tell us about your background..." className="w-full bg-transparent border-b border-stone-200 py-4 focus:outline-none focus:border-stone-900 transition-colors text-sm font-light resize-none"></textarea>
+                                <textarea name="message" value={formData.message} onChange={handleChange} rows="4" placeholder="Tell us about your background..." className="w-full bg-transparent border-b border-stone-200 py-4 focus:outline-none focus:border-stone-900 transition-colors text-sm font-light resize-none"></textarea>
                             </div>
 
                             <div className="text-center pt-8">

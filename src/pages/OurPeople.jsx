@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import SubPageHero from '../Components/SubPageHero';
 
 const TeamMemberCard = ({ name, role, description, image, delay }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -83,37 +84,15 @@ const OurPeople = () => {
   return (
     <div className="bg-[#FCFBFA] min-h-screen font-sans text-stone-900 pb-24">
 
-      {/* 1. CINEMATIC HERO SECTION */}
-      <section
-        className="relative pt-40 pb-24 px-6 text-center bg-cover bg-center overflow-hidden"
-        style={{
-          backgroundImage:
-            "url('')",
-        }}
-      >
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-stone-900/55"></div>
-
-        {/* Content */}
-        <div className="relative max-w-4xl mx-auto">
-
-          <h1 className="text-5xl md:text-7xl font-serif mb-8 italic text-white">
-            Our People
-          </h1>
-          <h1 className="text-white/80 text-2xl mb-4 block ">
-            The minds behind Ambi Vineyards vision, growth, and leadership.
-          </h1>
-          <br />
-
-          <nav className="flex items-center justify-center space-x-3 text-[10px] uppercase tracking-widest text-white/70">
-            <a href="/" className="hover:text-white transition-colors">
-              Home
-            </a>
-            <span className="opacity-40">/</span>
-            <span className="text-white font-bold">Our People</span>
-          </nav>
-        </div>
-      </section>
+      <SubPageHero
+        title="Our People"
+        subtitle="The minds behind Ambi Vineyards vision, growth, and leadership."
+        bgImageDesktop=""
+        breadcrumbs={[
+          { label: "Home", link: "/" },
+          { label: "Our People" }
+        ]}
+      />
 
       {/* 2. TEAM GRID */}
       <section className="px-6 max-w-7xl mx-auto mt-30">

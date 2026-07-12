@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from "react";
+import SubPageHero from "../Components/SubPageHero";
 import { 
   FaMapMarkerAlt, 
   FaPhoneAlt, 
@@ -117,39 +118,32 @@ const OutletPage = () => {
     <div className="bg-[#FCFBFA] min-h-screen font-sans text-stone-900">
       
       {/* 1. HERO SECTION */}
-      <section
-        className="relative pt-40 pb-24 px-6 text-center border-b border-stone-900/20 bg-cover bg-center"
-        style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1516594798947-e65505dbb29d?auto=format&fit=crop&w=1600&q=80')",
-        }}
+      <SubPageHero
+        bgImageDesktop="https://images.unsplash.com/photo-1516594798947-e65505dbb29d?auto=format&fit=crop&w=1600&q=80"
       >
-        <div className="absolute inset-0 bg-stone-900/60 transition-colors duration-700"></div>
-        <div className="relative max-w-4xl mx-auto">
-          <span className="text-[10px] uppercase tracking-[0.5em] text-white/70 mb-4 block font-bold">
-            {selectedCity ? `Exploring ${selectedCity}` : "Find Our Vintages"}
-          </span>
-          <h1 className="text-5xl md:text-7xl font-serif mb-8 italic text-white transition-all duration-500">
-            {selectedCity ? selectedCity : "Store Locator"}
-          </h1>
-          <nav className="flex items-center justify-center space-x-3 text-[10px] uppercase tracking-widest text-white/70">
-            <a href="/" className="hover:text-white transition-colors">Home</a>
-            <span className="opacity-40">/</span>
-            <button 
-              onClick={() => setSelectedCity(null)} 
-              className={`hover:text-white transition-colors ${!selectedCity ? "text-white font-bold" : ""}`}
-            >
-              Regions
-            </button>
-            {selectedCity && (
-              <>
-                <span className="opacity-40">/</span>
-                <span className="text-white font-bold">{selectedCity}</span>
-              </>
-            )}
-          </nav>
-        </div>
-      </section>
+        <span className="text-[10px] uppercase tracking-[0.5em] text-white/70 mb-3 block font-bold">
+          {selectedCity ? `Exploring ${selectedCity}` : "Find Our Vintages"}
+        </span>
+        <h1 className="text-4xl md:text-6xl font-serif italic text-white mb-6 leading-tight transition-all duration-500">
+          {selectedCity ? selectedCity : "Store Locator"}
+        </h1>
+        <nav className="flex items-center justify-center space-x-3 text-[10px] uppercase tracking-widest text-white/75">
+          <a href="/" className="hover:text-white transition-colors">Home</a>
+          <span className="opacity-40">/</span>
+          <button 
+            onClick={() => setSelectedCity(null)} 
+            className={`hover:text-white transition-colors ${!selectedCity ? "text-white font-bold" : ""}`}
+          >
+            Regions
+          </button>
+          {selectedCity && (
+            <>
+              <span className="opacity-40">/</span>
+              <span className="text-white font-bold">{selectedCity}</span>
+            </>
+          )}
+        </nav>
+      </SubPageHero>
 
       {/* 2. DYNAMIC CONTENT SECTION */}
       <section className="py-24 px-6 md:px-12 min-h-[60vh]">

@@ -44,7 +44,7 @@ const Header = () => {
           { name: 'Red Wine', href: '/wines/red' },
           { name: 'White Wine', href: '/wines/white' },
           { name: 'Rosé Wine', href: '/wines/rose' },
-          { name: 'Sparkling Wine', href: '/wines/beer' },
+          { name: 'Sparkling Wine', href: '/wines/sparkling' },
         ],
       },
       { name: 'Events', href: '/events' },
@@ -162,9 +162,7 @@ const Header = () => {
 
           {/* Sidebar Header */}
           <div className="flex justify-between items-center mb-10">
-            <span className="text-[10px] tracking-[0.3em] uppercase text-stone-400">
-              Navigation
-            </span>
+            
             <button onClick={() => setMobileMenuOpen(false)}>
               <X size={28} strokeWidth={1} />
             </button>

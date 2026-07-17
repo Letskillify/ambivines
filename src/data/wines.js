@@ -159,7 +159,7 @@ export const WINE_LIST = [
   {
     id: 9,
     name: "45° Spritzer – Green Apple",
-    category: "beer",
+    category: "sparkling",
     shortDescription: "A crisp and refreshing spritzer, highlighting vibrant notes of green apple. Light and easy to enjoy.",
     features: [
       "Crisp and refreshing notes of green apple",
@@ -175,7 +175,7 @@ export const WINE_LIST = [
   {
     id: 10,
     name: "45° Spritzer – Cranberry",
-    category: "beer",
+    category: "sparkling",
     shortDescription: "Bursting with fruity flavors of cranberry, raspberry, and cherry, offering a playful and invigorating palate.",
     features: [
       "Bursting with fruity flavors of cranberry, raspberry, and cherry",
@@ -191,7 +191,7 @@ export const WINE_LIST = [
   {
     id: 11,
     name: "45° Spritzer – Strawberry",
-    category: "beer",
+    category: "sparkling",
     shortDescription: "Refreshing and light, showcasing natural strawberry flavors in every sip.",
     features: [
       "Refreshing and light",
@@ -207,7 +207,7 @@ export const WINE_LIST = [
   {
     id: 20,
     name: "Tira Bold Beer",
-    category: "beer",
+    category: "sparkling",
     shortDescription: "A crisp golden fusion drink with citrus, pear, and refreshing fruity notes, delivering a smooth and lively finish.",
     features: [
       "Crisp golden pour with citrus, pear, and a subtle hop-like lift",
@@ -367,8 +367,8 @@ export const CATEGORY_INFO = {
     description: "Delicate and refreshing, our rosé collection offers the perfect balance of fruit and acidity, crafted for moments of effortless elegance.",
     heroImage: "https://plus.unsplash.com/premium_photo-1686904396892-7f09ce385215?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cm9zZSUyMHdpbmV8ZW58MHx8MHx8fDA%3D"
   },
-  beer: {
-    title: "Spritzers & Beers",
+  sparkling: {
+    title: "Sparkling",
     subtitle: "Fruity & Refreshing",
     description: "Vibrant and playful, our collection brings together fresh fruit flavors and sparkling zest for the perfect low-alcohol refreshment.",
     heroImage: "https://images.unsplash.com/photo-1652862730477-782a6dcb2385?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmVlciUyMHdpbmV8ZW58MHx8MHx8fDA%3D"

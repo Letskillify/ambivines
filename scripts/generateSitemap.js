@@ -19,7 +19,7 @@ const staticPaths = [
   '/wishlist'
 ];
 
-const categoryPaths = ['/wines/red', '/wines/white', '/wines/rose', '/wines/beer'];
+const categoryPaths = ['/wines/red', '/wines/white', '/wines/rose', '/wines/sparkling'];
 const detailPaths = WINE_LIST.map(w => `/wine/${w.id}`);
 
 const urls = [...staticPaths, ...categoryPaths, ...detailPaths];

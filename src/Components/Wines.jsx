@@ -34,9 +34,9 @@ const CATEGORIES = [
   },
   {
     id: 4,
-    name: "Beer",
-    description: "Artisan & Cold",
-    details: "Small-batch craft ales from our valley.",
+    name: "Sparkling",
+    description: "Fruity & Refreshing",
+    details: "Refreshing spritzers and sparkling pours.",
     image: "https://res.cloudinary.com/dcjn4y284/image/upload/v1783407843/i1_n1qt2i.jpg"
   }
 ];

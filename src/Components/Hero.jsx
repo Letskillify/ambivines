@@ -34,9 +34,9 @@ const Hero = () => {
         <div className="absolute inset-0 bg-black/35" />
 
         {/* Green color wash */}
-       <div className="absolute inset-0 bg-[#0f5132]/35 mix-blend-color" />
+        <div className="absolute inset-0 bg-[#0f5132]/35 mix-blend-color" />
 
-<div className="absolute inset-0 bg-gradient-to-t 
+        <div className="absolute inset-0 bg-gradient-to-t 
   from-black 
   via-[#1fa36b]/20 
   to-black/55" />
@@ -64,7 +64,7 @@ const Hero = () => {
             text-white leading-[1.1] 
             transition-all duration-[1500ms] ease-[cubic-bezier(0.25,1,0.5,1)] ${loaded ? 'translate-y-0 opacity-100' : 'translate-y-[120%] opacity-0'
             }`}>
-            CENTERAL INDIA'S FINEST
+            CENTRAL INDIA'S FINEST
           </span>
 
           <span className={`block font-serif italic 
@@ -85,16 +85,16 @@ const Hero = () => {
         {/* CTA Buttons */}
         <div className={`flex flex-col sm:flex-row items-center gap-6 transition-all duration-1000 delay-1000 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
-            
+
           <button
             className="group relative min-w-[200px] px-8 py-4 overflow-hidden transition-all duration-300 ease-out hover:shadow-xl hover:-translate-y-0.5"
             style={{ backgroundColor: themeColor }}
           >
-              <Link to="/wines">
-            <span className="relative z-10 uppercase text-[11px] tracking-[0.4em] font-bold font-sans text-white">
-              Explore All Wines
-            </span>
-            <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <Link to="/wines">
+              <span className="relative z-10 uppercase text-[11px] tracking-[0.4em] font-bold font-sans text-white">
+                Explore All Wines
+              </span>
+              <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </Link>
           </button>
 

@@ -6,7 +6,7 @@ const images = [
     id: 1,
     subtitle: "The Terroir",
     title: "Central India’s Only & Fastest Growing Vineyard",
-    description: "From the heart of Madhya Pradesh, we craft wines rooted in passion, precision, and authenticity, with a vision to take Central India to the global stage.",
+    description: "Crafting wines in the heart of Madhya Pradesh with the passion, precision, and authenticity to take Central India to the global stage.",
     src: "https://res.cloudinary.com/duzwys877/image/upload/v1783860302/IMG_6407_gvbbry.jpg",
   },
   {

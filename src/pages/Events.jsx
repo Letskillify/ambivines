@@ -25,7 +25,7 @@ const Events = () => {
       <SubPageHero
         title="Events"
         subtitle="Curated Wine Experiences"
-        bgImageDesktop="https://res.cloudinary.com/duzwys877/image/upload/v1783870092/event_rm8nrm.png"
+        bgImageDesktop="https://res.cloudinary.com/duzwys877/image/upload/v1784301312/WhatsApp_Image_2026-07-17_at_20.44.01_e4aarz.jpg"
         bgImageMobile="https://res.cloudinary.com/duzwys877/image/upload/v1783870088/event2_sve4hn.png"
         breadcrumbs={[
           { label: "Home", link: "/" },
@@ -44,7 +44,7 @@ const Events = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 px-6 text-center bg-white">
+      <section className="py-5 px-6 text-center bg-white">
         <div className="max-w-3xl mx-auto space-y-6">
           <p className="text-stone-600 text-lg font-light">
             To stay updated on our upcoming events, follow us on Instagram.

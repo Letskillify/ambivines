@@ -123,7 +123,7 @@ const OutletPage = () => {
         bgImageMobile="https://res.cloudinary.com/duzwys877/image/upload/v1784296311/WhatsApp_Image_2026-07-17_at_19.19.36_uuhxsv.jpg"
       >
         <span className="text-[10px] uppercase tracking-[0.5em] text-white/70 mb-3 block font-bold">
-          {selectedCity ? `Exploring ${selectedCity}` : "Find Our Vintages"}
+          {selectedCity ? `Exploring ${selectedCity}` : ""}
         </span>
         <h1 className="text-4xl md:text-6xl font-serif italic text-white mb-6 leading-tight transition-all duration-500">
           {selectedCity ? selectedCity : "Store Locator"}
@@ -320,28 +320,12 @@ const OutletPage = () => {
             </div>
 
             <div className="w-full lg:w-2/3 relative group">
-              <div className="absolute -inset-4 bg-white/30 blur-3xl rounded-full transition-opacity group-hover:opacity-100 opacity-0 duration-1000" />
-              <div className="relative overflow-hidden rounded-[2rem] bg-stone-50 border border-stone-200 shadow-inner p-8 md:p-12">
+              <div className="relative overflow-hidden rounded-[2rem] bg-stone-100 border border-stone-200 shadow-sm aspect-[16/10]">
                 <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/7/70/India_Madhya_Pradesh_location_map.svg"
-                  alt="Madhya Pradesh Locations"
-                  className="w-full h-auto opacity-40 grayscale contrast-125 hover:grayscale-0 transition-all duration-1000"
+                  src="https://res.cloudinary.com/duzwys877/image/upload/v1784296311/WhatsApp_Image_2026-07-17_at_19.19.36_uuhxsv.jpg"
+                  alt="Ambi Vineyards Territory"
+                  className="w-full h-full object-cover transition-transform duration-[3s] group-hover:scale-105"
                 />
-                <div className="absolute top-1/4 left-1/2 w-2 h-2 bg-[#811331] rounded-full animate-pulse shadow-[0_0_15px_rgba(129,19,49,0.5)]" />
-                <div className="absolute top-[60%] left-[35%] w-2 h-2 bg-[#811331] rounded-full animate-pulse delay-700" />
-                <div className="absolute bottom-[30%] left-[60%] w-2 h-2 bg-[#811331] rounded-full animate-pulse delay-300" />
-              </div>
-
-              <div className="absolute -bottom-6 -right-6 bg-white border border-stone-200 p-6 rounded-2xl shadow-xl hidden md:block">
-                <div className="flex items-center space-x-4">
-                  <div className="w-10 h-10 rounded-full bg-stone-900 flex items-center justify-center text-white">
-                    <FaMapMarkerAlt size={16} />
-                  </div>
-                  <div>
-                    <div className="text-[10px] uppercase tracking-widest text-stone-400 font-bold">Statewide</div>
-                    <div className="text-sm font-serif italic text-stone-900">Madhya Pradesh Territory</div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

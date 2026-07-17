@@ -97,20 +97,20 @@ const StorySection = () => {
                 </p>
 
                 <div className="pt-6 md:pt-10">
+                  <Link to="/our-story">
                   <button
                     type="button"
                     className="group relative inline-flex items-center justify-center w-full sm:w-auto px-10 md:px-12 py-4 border border-[#811331] text-[#811331] overflow-hidden transition-all duration-500 ease-out hover:text-white"
                   >
-                    <Link to="/our-story">
                       <span className="relative z-10 uppercase text-[10px] md:text-[11px] tracking-[0.3em] md:tracking-[0.4em] font-bold font-sans">
                         More About Us
                       </span>
-                    </Link>
                     <div
                       className="absolute inset-x-0 bottom-0 h-0 group-hover:h-full transition-all duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]"
                       style={{ backgroundColor: '#811331' }}
-                    />
+                      />
                   </button>
+                      </Link>
                 </div>
               </div>
             </Reveal>

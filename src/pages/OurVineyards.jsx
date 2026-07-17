@@ -50,7 +50,7 @@ const VineyardSection = ({ title, subtitle, description, image, reversed, label 
                   effect="fade"
                   spaceBetween={0}
                   slidesPerView={1}
-                  autoplay={{ delay: 3500, disableOnInteraction: false }}
+                  autoplay={{ delay: 1500, disableOnInteraction: false }}
                   pagination={{ clickable: true }}
                   className="w-full h-full"
                 >
@@ -201,11 +201,24 @@ const OurVineyards = () => {
       </section>
 
       {/* 4. CLOSING STATEMENT */}
-      <section className="py-20 md:py-40 px-6 text-center max-w-2xl mx-auto">
-        <h4 className="text-[11px] uppercase tracking-[0.4em] font-bold mb-6" style={{ color: '#811331' }}>Experience the Source</h4>
-        <p className="text-stone-800 font-serif text-2xl italic leading-relaxed">
+      <section className="py-20 md:py-32 px-6 text-center max-w-2xl mx-auto flex flex-col items-center">
+        <h4 className="text-[25px] uppercase tracking-[0.4em] font-bold mb-6" style={{ color: '#811331' }}>Experience the Source</h4>
+        <p className="text-stone-800 font-serif text-2xl italic leading-relaxed mb-10">
           Every bottle of Ambi tells the story of our soil. We invite you to taste the landscape of Central India, distilled into its finest form.
         </p>
+        <a
+          href="https://wa.me/917772010555?text=Hello%20Ambi%20Vineyards%2C%20I%20would%20like%20to%20book%20a%20vineyard%20tour."
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group relative inline-flex items-center justify-center px-16 py-5 bg-[#811331] text-white border border-[#811331] overflow-hidden rounded-full shadow-lg transition-all duration-500 ease-out hover:shadow-[0_15px_35px_rgba(129,19,49,0.3)] hover:-translate-y-1 hover:scale-105"
+        >
+          <span className="relative z-10 uppercase text-[12px] tracking-[0.4em] font-bold font-sans transition-colors duration-500 group-hover:text-[#811331]">
+            Book A Tour
+          </span>
+          <div
+            className="absolute inset-0 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] bg-white"
+          />
+        </a>
       </section>
 
     </main>

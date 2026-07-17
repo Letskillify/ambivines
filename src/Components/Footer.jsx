@@ -58,9 +58,7 @@ const Footer = () => {
                 AMBI VINES
               </h2> */}
               <img src="/img/logo_white.png" alt="Ambi Wines" style={{ width: "110px" }} />
-              <span className="text-[10px] tracking-[0.5em] mt-4 font-medium uppercase text-white/60">
-                Est 2004.
-              </span>
+             
             </div>
             <p className="text-sm font-light leading-relaxed max-w-xs text-white/80 font-sans italic">
               "From the heart of Madhya Pradesh, we craft wines rooted in passion, precision, and authenticity, with a vision to take Central India to the global stage."

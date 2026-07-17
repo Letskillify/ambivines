@@ -1,5 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import SubPageHero from '../Components/SubPageHero';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination, EffectFade } from 'swiper/modules';
+
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/effect-fade';
 
 // Custom Hook for Scroll Reveal
 const useElementOnScreen = (options) => {
@@ -24,6 +30,7 @@ const useElementOnScreen = (options) => {
 
 const VineyardSection = ({ title, subtitle, description, image, reversed, label }) => {
   const [ref, isVisible] = useElementOnScreen({ threshold: 0.2 });
+  const isMultipleImages = Array.isArray(image);
 
   return (
     <section 
@@ -36,12 +43,39 @@ const VineyardSection = ({ title, subtitle, description, image, reversed, label 
         {/* Image Side */}
         <div className="w-full lg:w-1/2">
           <div className="relative group overflow-hidden rounded-[2rem] shadow-sm">
-            <img 
-              src={image} 
-              alt={title} 
-              className="w-full aspect-[4/5] object-cover transition-transform duration-[3s] group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-700"></div>
+            {isMultipleImages ? (
+              <div className="w-full aspect-square overflow-hidden rounded-[2rem] vineyard-swiper relative">
+                <Swiper
+                  modules={[Autoplay, Pagination, EffectFade]}
+                  effect="fade"
+                  spaceBetween={0}
+                  slidesPerView={1}
+                  autoplay={{ delay: 3500, disableOnInteraction: false }}
+                  pagination={{ clickable: true }}
+                  className="w-full h-full"
+                >
+                  {image.map((img, index) => (
+                    <SwiperSlide key={index} className="w-full h-full relative">
+                      <img
+                        src={img}
+                        alt={`${title} Detail ${index + 1}`}
+                        loading="lazy"
+                        className="w-full h-full object-cover transition-transform duration-[3s] group-hover:scale-105"
+                      />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              </div>
+            ) : (
+              <>
+                <img 
+                  src={image} 
+                  alt={title} 
+                  className="w-full aspect-[4/5] object-cover transition-transform duration-[3s] group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-700"></div>
+              </>
+            )}
           </div>
         </div>
 
@@ -49,7 +83,7 @@ const VineyardSection = ({ title, subtitle, description, image, reversed, label 
         <div className="w-full lg:w-1/2 space-y-6 md:space-y-8">
           <div className="space-y-4">
           <span className="text-[11px] uppercase tracking-[0.5em] font-bold block" style={{ color: '#811331' }}>
-              {label}
+             
             </span>
             <h2 className="text-4xl md:text-5xl font-serif italic text-stone-900 leading-tight">
               {title}
@@ -73,7 +107,7 @@ const OurVineyards = () => {
       <SubPageHero
         title="Our Vineyards"
         subtitle="Origin & Earth"
-        bgImageDesktop="https://images.unsplash.com/photo-1474844331793-c25076ecdf6d?auto=format&fit=crop&q=80&w=2000"
+        bgImageDesktop="https://res.cloudinary.com/duzwys877/image/upload/v1784300002/WhatsApp_Image_2026-07-17_at_20.22.11_ybflm4.jpg"
         breadcrumbs={[
           { label: "Home", link: "/" },
           { label: "Our Vineyards" }
@@ -84,39 +118,72 @@ const OurVineyards = () => {
       <div className="space-y-4 md:space-y-12">
         <VineyardSection 
           label="The Location"
-          title="The Titari Plateau"
+          title="Expansion of Vineyards"
           // subtitle="Sun-Drenched High Altitudes"
-          description="Our vineyards are carefully selected and expertly managed, with a focus on soil integrity, climate suitability, and sustainable growth, ensuring consistency and quality in every harvest."
-          image="https://images.unsplash.com/photo-1566995541428-f2246c17cda1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHdpbmV8ZW58MHx8MHx8fDA%3D"
+          description="Initially Cultivated On Just 2 Acres, The Vineyard Now Spans Over 180 Acres, Utilizing Modern Technology For Grape Production."
+          image={[
+            "https://res.cloudinary.com/duzwys877/image/upload/v1784299321/WhatsApp_Image_2026-07-17_at_20.10.45_lnkuss.jpg",
+            "https://res.cloudinary.com/duzwys877/image/upload/v1784299321/WhatsApp_Image_2026-07-17_at_20.10.45_2_ikpfh7.jpg",
+            "https://res.cloudinary.com/duzwys877/image/upload/v1784299322/WhatsApp_Image_2026-07-17_at_20.10.44_andtfn.jpg",
+            "https://res.cloudinary.com/duzwys877/image/upload/v1784299325/WhatsApp_Image_2026-07-17_at_20.10.45_1_brmeai.jpg"
+          ]}
           reversed={false}
         />
 
         <VineyardSection 
           label="The Terroir"
-          title="Location & Terroir"
+          title="Premium Grape Varieties"
           // subtitle="Ancient Stones, Modern Character"
-          description="Located in the heart of Central India, our vineyards benefit from a unique combination of climate, soil composition, and altitude. These natural conditions allow the grapes to develop character, structure, and depth, contributing to wines that are expressive and well-balanced."
-          image="https://images.unsplash.com/photo-1663534389881-abfc2dbba679?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          description="Ambi Vineyards Grows Globally Renowned Grape Varieties For Red And White Wine Production, Including Shiraz, Cabernet Sauvignon, Zinfandel, Merlot, And Chenin Blanc."
+          image={[
+            "https://res.cloudinary.com/duzwys877/image/upload/v1784299562/WhatsApp_Image_2026-07-17_at_20.14.12_hkyrz6.jpg",
+            "https://res.cloudinary.com/duzwys877/image/upload/v1784299562/WhatsApp_Image_2026-07-17_at_20.14.13_mndvlv.jpg",
+            "https://res.cloudinary.com/duzwys877/image/upload/v1784299562/WhatsApp_Image_2026-07-17_at_20.14.13_1_xqwrsi.jpg",
+            "https://res.cloudinary.com/duzwys877/image/upload/v1784299592/WhatsApp_Image_2026-07-17_at_20.14.14_yjkoii.jpg"
+          ]}
           reversed={true}
         />
 
         <VineyardSection 
           label="Philosophy"
-          title="Cultivation Philosophy"
+          title="Production Capacity Growth"
           // subtitle="Respecting the Natural Cycle"
-          description="At Ambi Vineyards, management is driven by precision and planning. From vine training to harvest timing, every decision is guided by expertise and careful observation. This disciplined approach ensures grapes of optimal quality, year after year."
-          image="https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=1200"
+          description="Wine Production Capacity Has Expanded From 50,000 Liters To An Impressive 10,00,000 Liters."
+          image={[
+            "https://res.cloudinary.com/duzwys877/image/upload/v1784299847/WhatsApp_Image_2026-07-17_at_20.17.08_hwk6o4.jpg",
+            "https://res.cloudinary.com/duzwys877/image/upload/v1784299847/WhatsApp_Image_2026-07-17_at_20.17.08_1_g2nzgi.jpg",
+            "https://res.cloudinary.com/duzwys877/image/upload/v1784299850/WhatsApp_Image_2026-07-17_at_20.17.09_xrulsz.jpg",
+            "https://res.cloudinary.com/duzwys877/image/upload/v1784299851/WhatsApp_Image_2026-07-17_at_20.17.12_nft9em.jpg"
+          ]}
           reversed={false}
+        />
+          <VineyardSection 
+          label="The Terroir"
+          title="Educational & Tourism Initiatives"
+          // subtitle="Ancient Stones, Modern Character"
+          description="Over 5,00,000 Visitors Have Taken Free Vineyard Tours & Participated In Agricultural And Processing Training Programs."
+          image={[
+            "https://res.cloudinary.com/duzwys877/image/upload/v1784300000/WhatsApp_Image_2026-07-17_at_20.19.46_smtfv6.jpg",
+            "https://res.cloudinary.com/duzwys877/image/upload/v1784299998/WhatsApp_Image_2026-07-17_at_20.19.44_h74nlh.jpg",
+            "https://res.cloudinary.com/duzwys877/image/upload/v1784299999/WhatsApp_Image_2026-07-17_at_20.19.45_zomoap.jpg",
+            "https://res.cloudinary.com/duzwys877/image/upload/v1784299999/WhatsApp_Image_2026-07-17_at_20.19.45_1_xvytuv.jpg"
+          ]}
+          reversed={true}
         />
       </div>
 
       {/* 3. VISUAL STORYTELLING (Cinematic Break) */}
       <section className="relative mt-16 md:mt-32 h-[60vh] md:h-[80vh] flex items-center justify-center overflow-hidden">
-        {/* Full-width Image */}
+        {/* Full-width Image (Responsive) */}
         <img 
-          src="https://images.unsplash.com/photo-1535958636474-b021ee887b13?auto=format&fit=crop&q=80&w=2070" 
-          alt="Panoramic Vineyard View" 
-          className="absolute inset-0 w-full h-full object-cover"
+          src="https://res.cloudinary.com/duzwys877/image/upload/v1784298876/WhatsApp_Image_2026-07-17_at_20.03.24_cbgti5.jpg" 
+          alt="Panoramic Vineyard View Mobile" 
+          className="absolute inset-0 w-full h-full object-cover block md:hidden"
+        />
+        <img 
+          src="https://res.cloudinary.com/duzwys877/image/upload/v1784299137/WhatsApp_Image_2026-07-17_at_20.07.31_e5dhqa.jpg" 
+          alt="Panoramic Vineyard View Desktop" 
+          className="absolute inset-0 w-full h-full object-cover hidden md:block"
         />
         {/* Cinematic Overlay */}
         <div className="absolute inset-0 bg-stone-900/40"></div>

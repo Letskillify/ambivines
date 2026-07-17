@@ -88,6 +88,7 @@ const OurPeople = () => {
         title="Our People"
         subtitle="The Faces Behind Our Journey Of Excellence."
         bgImageDesktop="https://res.cloudinary.com/duzwys877/image/upload/v1784294520/WhatsApp_Image_2026-07-17_at_18.51.20_ergddt.jpg"
+        bgImageMobile="https://res.cloudinary.com/duzwys877/image/upload/v1784296064/WhatsApp_Image_2026-07-17_at_19.16.42_hbvkyp.jpg"
         breadcrumbs={[
           { label: "Home", link: "/" },
           { label: "Our People" }

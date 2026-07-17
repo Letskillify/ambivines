@@ -56,3 +56,12 @@
   background: #811331 !important;
   opacity: 1;
 }
+
+.vineyard-swiper .swiper-pagination-bullet {
+  background: #ffffff !important;
+  opacity: 0.5;
+}
+.vineyard-swiper .swiper-pagination-bullet-active {
+  background: #811331 !important;
+  opacity: 1;
+}

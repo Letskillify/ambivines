@@ -119,7 +119,8 @@ const OutletPage = () => {
       
       {/* 1. HERO SECTION */}
       <SubPageHero
-        bgImageDesktop="https://images.unsplash.com/photo-1516594798947-e65505dbb29d?auto=format&fit=crop&w=1600&q=80"
+        bgImageDesktop="https://res.cloudinary.com/duzwys877/image/upload/v1784298801/WhatsApp_Image_2026-07-17_at_19.57.51_wrs5pg.jpg"
+        bgImageMobile="https://res.cloudinary.com/duzwys877/image/upload/v1784296311/WhatsApp_Image_2026-07-17_at_19.19.36_uuhxsv.jpg"
       >
         <span className="text-[10px] uppercase tracking-[0.5em] text-white/70 mb-3 block font-bold">
           {selectedCity ? `Exploring ${selectedCity}` : "Find Our Vintages"}

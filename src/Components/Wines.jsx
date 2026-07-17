@@ -154,7 +154,7 @@ const OurWines = () => {
             className="group relative inline-flex items-center justify-center px-10 md:px-12 py-4 border border-[#811331] text-[#811331] overflow-hidden transition-all duration-300 ease-out hover:text-white"
           >
             <span className="relative z-10 uppercase text-[11px] tracking-[0.4em] font-bold font-sans">
-              View Full Menu
+              Explore All Wines
             </span>
             <div
               className="absolute inset-0 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.25,1)]"

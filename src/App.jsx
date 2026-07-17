@@ -20,6 +20,7 @@ import Events from "./pages/Events.jsx";
 import EventsIndore from "./pages/EventsIndore.jsx";
 import EventsBhopal from "./pages/EventsBhopal.jsx";
 import OurFarmers from "./pages/OurFarmers.jsx";
+import WhatsAppButton from "./Components/WhatsAppButton";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -40,6 +41,7 @@ function App() {
     <>
       <Header />
       <ScrollToTop />
+      <WhatsAppButton />
 
       <Routes>
         <Route path="/" element={<Home />} />

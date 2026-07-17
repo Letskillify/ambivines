@@ -226,9 +226,7 @@ const Header = () => {
 
           {/* Sidebar Footer */}
           <div className="mt-auto pt-10 border-t border-stone-200">
-            <p className="text-[9px] tracking-widest uppercase text-stone-400">
-              AMBI VINES © 2026
-            </p>
+          
           </div>
         </div>
       </div>

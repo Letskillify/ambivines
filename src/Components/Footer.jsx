@@ -11,7 +11,7 @@ const Footer = () => {
 
   const footerLinks = [
     {
-      title: 'Heritage',
+      title: 'About Us',
       links: [
         { name: 'Our Story', href: '/our-story' },
         { name: 'Our People', href: '/our-people' },
@@ -21,7 +21,7 @@ const Footer = () => {
       ],
     },
     {
-      title: 'Collection',
+      title: 'Our Wines',
       links: [
         { name: 'Explore All', href: '/wines' },
         { name: 'Red Wine', href: '/wines/red' },
@@ -31,7 +31,7 @@ const Footer = () => {
       ],
     },
     {
-      title: 'The Estate',
+      title: 'Explore',
       links: [
         // { name: 'Book a Tour', href: '/book-tour' },
         { name: 'Our Outlets', href: '/stores' },
@@ -186,7 +186,7 @@ const Footer = () => {
         {/* --- Bottom Bar --- */}
         <div className="flex flex-col md:flex-row items-center justify-between pt-12 border-t border-white/10">
           <div className="flex flex-col md:flex-row items-center gap-8 text-[9px] tracking-[0.3em] font-medium text-white/50">
-            <p>© 2026 AMBI VINES ESTATE. ALL RIGHTS RESERVED.</p>
+            <p>© 2026 AMBI VINEYARDS . ALL RIGHTS RESERVED.</p>
             <div className="flex gap-8 uppercase">
               <a href="#" className="hover:text-white transition-colors">Privacy</a>
               <a href="#" className="hover:text-white transition-colors">Terms</a>

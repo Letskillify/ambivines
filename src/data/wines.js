@@ -206,7 +206,7 @@ export const WINE_LIST = [
   },
   {
     id: 20,
-    name: "Tira Bold Beer",
+    name: " Bold ",
     category: "sparkling",
     shortDescription: "A crisp golden fusion drink with citrus, pear, and refreshing fruity notes, delivering a smooth and lively finish.",
     features: [
@@ -368,7 +368,7 @@ export const CATEGORY_INFO = {
     heroImage: "https://plus.unsplash.com/premium_photo-1686904396892-7f09ce385215?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cm9zZSUyMHdpbmV8ZW58MHx8MHx8fDA%3D"
   },
   sparkling: {
-    title: "Sparkling",
+    title: "Sparkling Wines",
     subtitle: "Fruity & Refreshing",
     description: "Vibrant and playful, our collection brings together fresh fruit flavors and sparkling zest for the perfect low-alcohol refreshment.",
     heroImage: "https://images.unsplash.com/photo-1652862730477-782a6dcb2385?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmVlciUyMHdpbmV8ZW58MHx8MHx8fDA%3D"

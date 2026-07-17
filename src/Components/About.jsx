@@ -1,9 +1,23 @@
 import React from 'react';
 import Reveal from './Reveal';
 import { Link } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination, EffectFade } from 'swiper/modules';
+
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/effect-fade';
+
+const ABOUT_IMAGES = [
+  "https://res.cloudinary.com/duzwys877/image/upload/v1784292247/WhatsApp_Image_2026-07-17_at_18.12.29_1_ph3fs6.jpg",
+  "https://res.cloudinary.com/duzwys877/image/upload/v1784292245/WhatsApp_Image_2026-07-17_at_18.12.29_quuurn.jpg",
+  "https://res.cloudinary.com/duzwys877/image/upload/v1784292245/WhatsApp_Image_2026-07-17_at_18.12.28_xasp3u.jpg",
+  "https://res.cloudinary.com/duzwys877/image/upload/v1784292281/WhatsApp_Image_2026-07-17_at_18.11.02_xzrvwn.jpg"
+];
+
 const StorySection = () => {
   return (
-    <section className="bg-[#fcfaf8] py-20 md:py-32 px-6 md:px-12 overflow-hidden relative">
+    <section className="bg-[#fcfaf8] py-20 md:py-32 px-6 md:px-12 overflow-hidden relative pb-28">
       {/* Background Subtle Texture/Watermark */}
       <div className="absolute top-20 right-[-5%] opacity-[0.03] pointer-events-none hidden lg:block">
         <h2 className="text-[20rem] font-serif italic leading-none uppercase">AMBI VINES</h2>
@@ -15,14 +29,28 @@ const StorySection = () => {
           {/* Visual Side: Multi-layered images */}
           <div className="lg:col-span-6 relative order-2 lg:order-1 mt-12 lg:mt-0">
             <Reveal direction="left" className="relative z-10">
-              {/* Main Image with refined shadow */}
-              <div className="aspect-[4/5] overflow-hidden shadow-[20px_20px_60px_-15px_rgba(0,0,0,0.12)] md:shadow-[30px_30px_80px_-15px_rgba(0,0,0,0.1)] rounded-sm">
-                <img
-                  src="https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&q=80&w=1500"
-                  alt="Vineyard Detail"
-                  loading="lazy"
-                  className="w-full h-full object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-[2000ms] hover:scale-105"
-                />
+              {/* Main Image Swiper Slider with refined shadow */}
+              <div className="aspect-square overflow-hidden shadow-[20px_20px_60px_-15px_rgba(0,0,0,0.12)] md:shadow-[30px_30px_80px_-15px_rgba(0,0,0,0.1)] rounded-sm about-swiper relative">
+                <Swiper
+                  modules={[Autoplay, Pagination, EffectFade]}
+                  effect="fade"
+                  spaceBetween={0}
+                  slidesPerView={1}
+                  autoplay={{ delay: 3500, disableOnInteraction: false }}
+                  pagination={{ clickable: true }}
+                  className="w-full h-full"
+                >
+                  {ABOUT_IMAGES.map((img, index) => (
+                    <SwiperSlide key={index} className="w-full h-full relative">
+                      <img
+                        src={img}
+                        alt={`Vineyard Detail ${index + 1}`}
+                        loading="lazy"
+                        className="w-full h-full object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-[2000ms] hover:scale-105"
+                      />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
               </div>
             </Reveal>
 
@@ -74,9 +102,9 @@ const StorySection = () => {
                     className="group relative inline-flex items-center justify-center w-full sm:w-auto px-10 md:px-12 py-4 border border-[#811331] text-[#811331] overflow-hidden transition-all duration-500 ease-out hover:text-white"
                   >
                     <Link to="/our-story">
-                    <span className="relative z-10 uppercase text-[10px] md:text-[11px] tracking-[0.3em] md:tracking-[0.4em] font-bold font-sans">
-                     More About Us
-                    </span>
+                      <span className="relative z-10 uppercase text-[10px] md:text-[11px] tracking-[0.3em] md:tracking-[0.4em] font-bold font-sans">
+                        More About Us
+                      </span>
                     </Link>
                     <div
                       className="absolute inset-x-0 bottom-0 h-0 group-hover:h-full transition-all duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]"

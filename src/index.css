@@ -47,3 +47,12 @@
 .swiper-pagination-premium {
   margin-top: 1rem !important;
 }
+
+.about-swiper .swiper-pagination-bullet {
+  background: #ffffff !important;
+  opacity: 0.5;
+}
+.about-swiper .swiper-pagination-bullet-active {
+  background: #811331 !important;
+  opacity: 1;
+}

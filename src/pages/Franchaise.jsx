@@ -23,18 +23,18 @@ const FranchisePage = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        
-        const message = `*New Franchise Inquiry*\n\n` +
+
+        const message = `*New Franchise Enquiry*\n\n` +
             `*Name:* ${formData.firstName} ${formData.lastName}\n` +
             `*Mobile:* ${formData.mobile}\n` +
             `*Email:* ${formData.email}\n` +
             `*Proposed City/Location:* ${formData.city || "N/A"}\n` +
             `*Pincode:* ${formData.pincode || "N/A"}\n` +
             `*Message:* ${formData.message || "N/A"}`;
-            
+
         const encodedMessage = encodeURIComponent(message);
         const whatsappUrl = `https://wa.me/917772010555?text=${encodedMessage}`;
-        
+
         window.open(whatsappUrl, '_blank');
     };
     return (
@@ -44,7 +44,7 @@ const FranchisePage = () => {
             <SubPageHero
                 title="Partner With Us"
                 subtitle="Franchise Opportunity"
-                bgImageDesktop="https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?auto=format&fit=crop&q=80&w=2000"
+                bgImageDesktop="https://res.cloudinary.com/duzwys877/image/upload/v1784294022/WhatsApp_Image_2026-07-17_at_18.23.15_iwmnkw.jpg"
                 breadcrumbs={[
                     { label: "Home", link: "/" },
                     { label: "Franchise" }
@@ -55,7 +55,7 @@ const FranchisePage = () => {
             {/* 2. THE VISION (Introduction) */}
             <section className="py-32 px-6 text-center bg-white border-b border-stone-100">
                 <div className="max-w-3xl mx-auto">
-                    <p className="text-xl md:text-2xl font-serif text-stone-800 capitalize leading-relaxed italic mb-10" style={{color: "#811331"}}>
+                    <p className="text-xl md:text-2xl font-serif text-stone-800 capitalize leading-relaxed italic mb-10" style={{ color: "#811331" }}>
                         "Ambi Vineyards offers a structured franchise model designed for long-term growth in the wine retail space."
                     </p>
                     <div className="h-px w-20 bg-stone-200 mx-auto mb-10" />
@@ -80,7 +80,7 @@ const FranchisePage = () => {
                                 />
                             </div>
                             <div className="absolute -bottom-10 -right-10 bg-white p-10 rounded-[2rem] shadow-xl hidden md:block">
-                            <span className="text-[10px] uppercase tracking-[0.4em] block mb-2 font-bold" style={{ color: '#811331' }}>Status</span>
+                                <span className="text-[10px] uppercase tracking-[0.4em] block mb-2 font-bold" style={{ color: '#811331' }}>Status</span>
                                 <span className="text-2xl font-serif italic text-stone-900">Est. Heritage</span>
                             </div>
                         </div>
@@ -126,12 +126,12 @@ const FranchisePage = () => {
                 </div>
             </section>
 
-            {/* 4. INQUIRY FORM (Boutique Application) */}
+            {/* 4. Enquiry FORM (Boutique Application) */}
             <section className="py-32 px-6 md:px-12 bg-white">
                 <div className="max-w-5xl mx-auto">
                     <div className="bg-[#FDFCFB] border border-stone-100 p-12 md:p-24 rounded-[4rem] shadow-sm">
                         <div className="text-center mb-20">
-                            <span className="text-[10px] uppercase tracking-[0.6em] block mb-6" style={{ color: '#811331' }}>Partnership Inquiry</span>
+                            <span className="text-[10px] uppercase tracking-[0.6em] block mb-6" style={{ color: '#811331' }}>Partnership Enquiry</span>
                             <h2 className="text-4xl md:text-5xl font-serif italic">Express Your Interest</h2>
                         </div>
 
@@ -174,7 +174,7 @@ const FranchisePage = () => {
                                     className="group relative inline-flex items-center justify-center px-16 py-4 border border-[#811331] text-[#811331] overflow-hidden rounded-full shadow-lg transition-all duration-300 ease-out hover:text-white hover:-translate-y-1"
                                 >
                                     <span className="relative z-10 text-[10px] tracking-[0.4em] uppercase font-bold">
-                                        Submit Inquiry
+                                        Submit Enquiry
                                     </span>
                                     <div
                                         className="absolute inset-0 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.25,1)]"

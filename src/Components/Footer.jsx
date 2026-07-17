@@ -66,10 +66,17 @@ const Footer = () => {
               "From the heart of Madhya Pradesh, we craft wines rooted in passion, precision, and authenticity, with a vision to take Central India to the global stage."
             </p>
             <div className="flex space-x-6 pt-2">
-              {[Instagram, Facebook, Twitter, Mail].map((Icon, idx) => (
+              {[
+                { Icon: Instagram, href: "https://www.instagram.com/ambivineyards?igsh=aGN5eTdtZzI4cmNi" },
+                { Icon: Facebook, href: "https://www.facebook.com/share/1CUC6YVvnB/?mibextid=wwXIfr" },
+                { Icon: Twitter, href: "https://x.com/ambi_vineyards?s=11" },
+                { Icon: Mail, href: "mailto:info@ambivineyards.com" },
+              ].map(({ Icon, href }, idx) => (
                 <a
                   key={idx}
-                  href="#"
+                  href={href}
+                  target={href.startsWith('mailto:') ? undefined : '_blank'}
+                  rel={href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
                   className="text-white/60 hover:text-white transition-all duration-500 hover:-translate-y-1"
                 >
                   <Icon size={20} strokeWidth={1.2} />
@@ -169,7 +176,7 @@ const Footer = () => {
                 to="/partner"
                 className="inline-flex w-full items-center justify-between text-[9px] uppercase tracking-[0.25em] font-semibold text-white bg-white/5 hover:bg-white/15 px-4 py-3 rounded-lg border border-white/10 hover:border-white/20 transition-all duration-300 group/btn"
               >
-                <span>Franchise Inquiry</span>
+                <span>Franchise Enquiry</span>
                 <ChevronRight size={12} className="transform group-hover/btn:translate-x-1 transition-transform" />
               </Link>
             </div>

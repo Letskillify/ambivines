@@ -38,7 +38,7 @@ const SubPageHero = ({
               </span>
             )} */}
 
-            <h1 className="text-4xl md:text-6xl font-serif italic text-white mb-6 leading-tight">
+            <h1 className="text-4xl md:text-6xl font-serif italic text-white pt-8 md:pt-0 mb-6 leading-tight">
               {title}
             </h1>
 

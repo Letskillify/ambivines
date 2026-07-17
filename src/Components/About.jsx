@@ -55,7 +55,7 @@ const StorySection = () => {
             </Reveal>
 
             {/* Floating Accent Image (The Premium Touch) */}
-            <Reveal direction="up" delay={0.2} className="absolute -bottom-10 -right-6 md:-bottom-16 md:-right-20 w-5/12 md:w-1/2 aspect-square z-20">
+            <Reveal direction="up" delay={0.2} className="absolute -bottom-10 -left-6 md:-bottom-16 md:-left-12 w-1/3 md:w-1/4 aspect-square z-20">
               <div className="w-full h-full p-1.5 md:p-2 bg-white shadow-2xl rounded-sm">
                 <img
                   src="https://res.cloudinary.com/dcjn4y284/image/upload/v1783407840/g1_j1pwwa.jpg"

@@ -100,7 +100,7 @@ const OurFarmers = () => {
       <SubPageHero
         title="Our Farmers"
         subtitle="The heart of our harvest, rooted in tradition and passion."
-        bgImageDesktop="https://res.cloudinary.com/duzwys877/image/upload/v1783870088/farmers_pmhtnt.png"
+        bgImageDesktop="https://res.cloudinary.com/duzwys877/image/upload/v1784302049/farmers_tenntd.png"
         breadcrumbs={[
           { label: "Home", link: "/" },
           { label: "Our Farmers" }
